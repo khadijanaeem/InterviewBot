@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "se-tech-1",
+    "question": "What is the difference between stack and heap memory?",
+    "answer": "Stack memory is used for static memory allocation and stores local variables and function call data in a last-in-first-out order. It is managed automatically by the compiler and is faster but limited in size. Heap memory is used for dynamic memory allocation, managed manually by the programmer or garbage collector, and is larger but slower to access. Stack memory is automatically freed when a function returns, while heap memory must be explicitly deallocated."
+  },
+  {
+    "id": "se-tech-2",
+    "question": "Explain what Big-O notation is in simple words.",
+    "answer": "Big-O notation describes how the runtime or space requirements of an algorithm grow as the input size increases. It gives an upper bound on performance in the worst case. For example, O(1) means constant time regardless of input size, O(n) means time grows linearly with input, and O(n²) means time grows quadratically. It helps developers compare algorithms and choose the most efficient one for large datasets."
+  },
+  {
+    "id": "se-tech-3",
+    "question": "What is the difference between a process and a thread?",
+    "answer": "A process is an independent program in execution with its own memory space, resources, and state. A thread is a lightweight unit of execution within a process that shares the same memory and resources as other threads in the same process. Processes are isolated from each other for safety, while threads communicate more easily but require synchronization to avoid race conditions. Context switching between threads is faster than between processes."
+  },
+  {
+    "id": "se-tech-4",
+    "question": "What are design patterns? Name a few common ones.",
+    "answer": "Design patterns are reusable solutions to commonly occurring problems in software design. Common ones include Singleton (ensures only one instance of a class), Factory (creates objects without specifying the exact class), Observer (notifies dependent objects of state changes), Strategy (defines a family of interchangeable algorithms), and Decorator (adds behavior to objects dynamically without altering their class)."
+  },
+  {
+    "id": "se-tech-5",
+    "question": "Explain the SOLID principles.",
+    "answer": "SOLID stands for: Single Responsibility (a class should have one reason to change), Open/Closed (open for extension, closed for modification), Liskov Substitution (subclasses should be replaceable for their base classes), Interface Segregation (clients should not depend on interfaces they don't use), and Dependency Inversion (depend on abstractions, not concrete implementations)."
+  },
+  {
+    "id": "se-tech-6",
+    "question": "What is the difference between compiled and interpreted languages?",
+    "answer": "Compiled languages are fully translated into machine code before execution, resulting in faster runtime. Examples include C and Go. Interpreted languages are executed line by line at runtime, making them more flexible but slower. Examples include Python and JavaScript. Some languages like Java use a hybrid approach, compiling to bytecode interpreted by a virtual machine."
+  },
+  {
+    "id": "se-tech-7",
+    "question": "What is recursion? Give an example.",
+    "answer": "Recursion is when a function calls itself to solve a smaller instance of the same problem. It requires a base case to stop and a recursive case to break the problem down. For example, factorial(n) returns 1 if n is 0, otherwise returns n multiplied by factorial(n-1). It is useful for tree traversal, merge sort, and mathematical sequences."
+  },
+  {
+    "id": "se-tech-8",
+    "question": "Explain the concept of time complexity and space complexity.",
+    "answer": "Time complexity measures how execution time scales with input size, expressed in Big-O notation. Space complexity measures how much memory an algorithm uses relative to input. For example, linear search is O(n) time and O(1) space, while merge sort is O(n log n) time and O(n) space. Balancing both is important when optimizing algorithms."
+  },
+  {
+    "id": "se-tech-9",
+    "question": "What is a linked list and how does it differ from an array?",
+    "answer": "A linked list stores elements as nodes, each containing a value and a pointer to the next node. Arrays store elements in contiguous memory with O(1) random access but expensive mid-insertions. Linked lists allow O(1) insertion at the head but require O(n) traversal to access elements by index. Arrays have fixed size in many languages; linked lists are dynamic."
+  },
+  {
+    "id": "se-tech-10",
+    "question": "What is a binary search tree? How do insertions work?",
+    "answer": "A binary search tree is a tree where the left child holds values smaller than the parent and the right holds larger values. Insertion starts at the root, compares the new value, and traverses left or right recursively until an empty spot is found. BSTs allow O(log n) average search and insertion but degrade to O(n) if unbalanced."
+  },
+  {
+    "id": "py-tech-1",
+    "question": "What are Python decorators and how do they work?",
+    "answer": "Decorators are functions that modify the behavior of another function without changing its source code. They use the @decorator syntax and wrap the target function. A decorator takes a function as input, defines an inner wrapper that adds behavior before or after calling the original, and returns the wrapper. Common uses include logging, authentication, and caching."
+  },
+  {
+    "id": "py-tech-2",
+    "question": "Explain the difference between a list and a tuple in Python.",
+    "answer": "Lists are mutable sequences defined with square brackets; elements can be changed, added, or removed. Tuples are immutable sequences defined with parentheses; elements cannot be changed after creation. Tuples are faster and use less memory. Lists are used for collections that may change; tuples for fixed data like coordinates. Tuples can be dictionary keys; lists cannot."
+  },
+  {
+    "id": "py-tech-3",
+    "question": "What is a Python generator? How is it different from a regular function?",
+    "answer": "A generator uses the yield keyword to return values one at a time, pausing execution between each yield. Unlike regular functions that return all values at once, generators maintain state between calls and produce values lazily on demand. This makes them memory-efficient for large datasets and streaming pipelines."
+  },
+  {
+    "id": "py-tech-4",
+    "question": "What is the GIL (Global Interpreter Lock) in Python?",
+    "answer": "The GIL is a mutex in CPython that allows only one thread to execute Python bytecode at a time, even on multi-core processors. It prevents true parallel thread execution for CPU-bound tasks. For CPU-bound work, use multiprocessing instead. For I/O-bound tasks, threading still works well because threads release the GIL during I/O operations."
+  },
+  {
+    "id": "py-tech-5",
+    "question": "Explain list comprehensions in Python with an example.",
+    "answer": "List comprehensions provide a concise way to create lists: [expression for item in iterable if condition]. For example, [x**2 for x in range(10) if x % 2 == 0] creates a list of squares of even numbers. They are generally faster and more readable than equivalent for loops and can also be used for dictionaries and sets."
+  },
+  {
+    "id": "py-tech-6",
+    "question": "What is the difference between deepcopy and shallow copy in Python?",
+    "answer": "A shallow copy creates a new object but references the same nested objects as the original. Changes to nested mutable objects affect both copies. A deep copy creates a fully independent clone of the object and all nested objects. Use copy.copy() for shallow and copy.deepcopy() for deep copies. Use deep copy when working with nested or complex mutable data."
+  },
+  {
+    "id": "py-tech-7",
+    "question": "How does memory management work in Python?",
+    "answer": "Python uses a private heap for all objects. Memory is managed through reference counting: each object tracks how many references point to it, and memory is freed when the count reaches zero. A cyclic garbage collector handles reference cycles. Python's allocator uses object-specific allocators and pymalloc for efficiency with small objects."
+  },
+  {
+    "id": "py-tech-8",
+    "question": "What are *args and **kwargs in Python?",
+    "answer": "*args allows a function to accept any number of positional arguments as a tuple. **kwargs allows any number of keyword arguments as a dictionary. They enable flexible function signatures and are commonly used in decorators and wrapper functions. Both can be combined in function definitions."
+  },
+  {
+    "id": "py-tech-9",
+    "question": "Explain Python's duck typing concept.",
+    "answer": "Duck typing means Python cares about what methods and properties an object has, not its type or class. If it walks like a duck and quacks like a duck, it's a duck. Python tries to call a method and raises an error only if it doesn't exist. This enables flexible, polymorphic code without requiring explicit inheritance."
+  },
+  {
+    "id": "py-tech-10",
+    "question": "What is the difference between @staticmethod and @classmethod in Python?",
+    "answer": "@staticmethod defines a method that receives no implicit first argument and cannot access class or instance state. It is used for utility functions. @classmethod receives the class itself as the first argument (cls) and can access or modify class-level state. It is often used for alternative constructors. Both can be called on the class without creating an instance."
+  },
+  {
+    "id": "be-tech-1",
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "answer": "SQL databases are relational with structured tables, predefined schemas, and ACID transactions. They use SQL for querying. Examples: PostgreSQL, MySQL. NoSQL databases are non-relational with flexible formats like documents, key-value, or graphs. They scale horizontally and handle unstructured data well. Examples: MongoDB, Redis. The choice depends on data structure, scalability needs, and consistency requirements."
+  },
+  {
+    "id": "be-tech-2",
+    "question": "Explain RESTful API design principles.",
+    "answer": "REST is based on statelessness, client-server separation, cacheability, uniform interface using standard HTTP methods (GET, POST, PUT, DELETE), layered system, and optional code on demand. RESTful APIs use resource-based URLs, return appropriate HTTP status codes, and communicate using JSON. Good design includes meaningful endpoints, versioning, and consistent error responses."
+  },
+  {
+    "id": "be-tech-3",
+    "question": "What is database indexing and why is it important?",
+    "answer": "Indexing creates a data structure that speeds up data retrieval without scanning the entire table. It works like a book index, allowing the database engine to find rows quickly. Indexes are critical for query performance on large datasets, especially on columns used in WHERE, JOIN, and ORDER BY clauses. Over-indexing can slow down inserts and updates."
+  },
+  {
+    "id": "be-tech-4",
+    "question": "What is caching and how does it improve backend performance?",
+    "answer": "Caching stores results of expensive operations in fast-access storage so future requests are served without recomputing. It reduces database load, decreases response times, and increases throughput. Common tools include Redis and Memcached. Cache invalidation is the key challenge: cached data must be updated when underlying data changes to avoid stale responses."
+  },
+  {
+    "id": "be-tech-5",
+    "question": "Explain the concept of database normalization.",
+    "answer": "Normalization organizes a schema to reduce data redundancy and improve integrity by dividing large tables into smaller related ones. 1NF eliminates duplicate columns, 2NF removes partial dependencies, 3NF removes transitive dependencies. Normalization reduces storage and update anomalies but may require more joins. Denormalization is sometimes used for read performance."
+  },
+  {
+    "id": "be-tech-6",
+    "question": "What is a message queue and when would you use one?",
+    "answer": "A message queue enables asynchronous communication between services. Producers send messages without waiting for a response; consumers process them at their own pace. Use cases include sending emails, processing payments, and background jobs. It decouples services and handles traffic spikes. Popular tools: RabbitMQ, Apache Kafka, AWS SQS."
+  },
+  {
+    "id": "be-tech-7",
+    "question": "What is JWT and how does authentication work with it?",
+    "answer": "JWT is a compact token consisting of a header, payload, and signature. Authentication flow: user logs in, server verifies credentials and issues a signed JWT, client stores and sends it in the Authorization header with each request. The server verifies the signature without a database lookup, making it stateless and scalable."
+  },
+  {
+    "id": "be-tech-8",
+    "question": "Explain the difference between horizontal and vertical scaling.",
+    "answer": "Vertical scaling adds more resources to an existing server (more CPU, RAM). It is simpler but has hardware limits and a single point of failure. Horizontal scaling adds more servers to distribute load. It offers virtually unlimited scalability and fault tolerance but requires load balancers and stateless application design. Modern cloud architectures prefer horizontal scaling."
+  },
+  {
+    "id": "be-tech-9",
+    "question": "What are microservices and how do they differ from monolithic architecture?",
+    "answer": "Microservices split an application into small, independently deployable services each handling a specific business capability, communicating via APIs or message queues. Monolithic architecture packages everything into one deployable unit. Microservices enable independent scaling and fault isolation but add deployment complexity. Monoliths are simpler initially but harder to scale as they grow."
+  },
+  {
+    "id": "be-tech-10",
+    "question": "What is a race condition and how do you prevent it?",
+    "answer": "A race condition occurs when two or more threads access shared data concurrently and the outcome depends on execution order. Prevention includes using mutexes or locks, atomic operations, database transactions with proper isolation levels, and designing stateless systems. In databases, optimistic and pessimistic locking are common approaches."
+  },
+  {
+    "id": "ai-tech-1",
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "answer": "Supervised learning trains on labeled data to map inputs to outputs. Examples: classification, regression. Unsupervised learning finds hidden patterns in unlabeled data. Examples: clustering, dimensionality reduction. Supervised learning requires labeled data; unsupervised is used for data exploration and finding natural groupings."
+  },
+  {
+    "id": "ai-tech-2",
+    "question": "Explain how a neural network works at a high level.",
+    "answer": "A neural network has an input layer, hidden layers, and an output layer of connected nodes. During training, predictions are compared to actual values via a loss function. Weights are adjusted through backpropagation and gradient descent to minimize error. Over many iterations, the network learns patterns in data. Deep networks have many hidden layers and learn complex representations."
+  },
+  {
+    "id": "ai-tech-3",
+    "question": "What is overfitting and how do you prevent it?",
+    "answer": "Overfitting is when a model learns training data too well, including noise, and fails to generalize to new data. Prevention techniques include more training data, L1/L2 regularization, dropout layers, reducing model complexity, early stopping, cross-validation, and data augmentation."
+  },
+  {
+    "id": "ai-tech-4",
+    "question": "What is the difference between a classification and a regression problem?",
+    "answer": "Classification predicts a discrete category, such as spam or not spam. Regression predicts a continuous value, such as house prices. Classification uses metrics like accuracy, precision, recall, and F1. Regression uses MSE, MAE, and R-squared. Both are supervised learning tasks."
+  },
+  {
+    "id": "ai-tech-5",
+    "question": "Explain the concept of backpropagation.",
+    "answer": "Backpropagation computes gradients of the loss function with respect to each weight using the chain rule. In the forward pass, predictions and loss are computed. In the backward pass, the error gradient is propagated back through each layer. Gradient descent then updates weights to reduce loss. It is the foundation of training deep learning models."
+  },
+  {
+    "id": "ai-tech-6",
+    "question": "What is a transformer model and why is it important in NLP?",
+    "answer": "A transformer is a deep learning architecture that uses self-attention mechanisms to process all tokens in a sequence simultaneously, capturing long-range dependencies efficiently. It is the foundation of BERT, GPT, and T5. Transformers achieve state-of-the-art results in text generation, translation, summarization, and question answering, and scale well with more data and compute."
+  },
+  {
+    "id": "ai-tech-7",
+    "question": "What is the difference between precision and recall?",
+    "answer": "Precision is True Positives divided by (True Positives + False Positives) — of all predicted positives, how many were correct. Recall is True Positives divided by (True Positives + False Negatives) — of all actual positives, how many were found. High precision means few false alarms; high recall means few missed positives. F1 score is the harmonic mean of both."
+  },
+  {
+    "id": "ai-tech-8",
+    "question": "What is a confusion matrix and how do you read it?",
+    "answer": "A confusion matrix compares predicted labels against actual labels. For binary classification it has four values: True Positives, True Negatives, False Positives, and False Negatives. From it you derive accuracy, precision, recall, and F1 score. It shows where a model is making errors, such as confusing one class for another."
+  },
+  {
+    "id": "ai-tech-9",
+    "question": "Explain the concept of transfer learning.",
+    "answer": "Transfer learning reuses a model trained on one task as the starting point for a related task. Instead of training from scratch, pretrained features are fine-tuned on new data. It is powerful in deep learning where training large models is expensive. BERT and GPT are pretrained on large text corpora and fine-tuned for specific tasks like sentiment analysis or classification."
+  },
+  {
+    "id": "ai-tech-10",
+    "question": "What is the difference between a generative and discriminative model?",
+    "answer": "A discriminative model learns the boundary between classes by modeling P(y|x). Examples: logistic regression, SVMs, neural networks for classification. A generative model learns the joint distribution P(x, y) and can generate new samples. Examples: Naive Bayes, GANs, VAEs. Discriminative models perform better for classification; generative models are used for data generation and density estimation."
+  },
+  {
+    "id": "fe-tech-1",
+    "question": "What is the difference between var, let, and const in JavaScript?",
+    "answer": "var is function-scoped, hoisted, and can be redeclared and reassigned. let is block-scoped, cannot be redeclared but can be reassigned. const is block-scoped, must be initialized at declaration, and cannot be reassigned, though object contents can still be mutated. Best practice is to use const by default, let when reassignment is needed, and avoid var."
+  },
+  {
+    "id": "fe-tech-2",
+    "question": "Explain the CSS box model.",
+    "answer": "Every element is a box with four areas from inside out: content, padding (space between content and border), border, and margin (space outside the border). The box-sizing property controls width and height calculation: content-box excludes padding and border, while border-box includes them, making layout calculations more intuitive."
+  },
+  {
+    "id": "fe-tech-3",
+    "question": "What is the virtual DOM and how does React use it?",
+    "answer": "The virtual DOM is an in-memory representation of the real DOM. When state changes, React creates a new virtual DOM, diffs it against the previous one, and applies only the changes to the real DOM (reconciliation). This minimizes expensive DOM operations and improves performance by batching updates."
+  },
+  {
+    "id": "fe-tech-4",
+    "question": "What is CSS specificity and how is it calculated?",
+    "answer": "CSS specificity determines which styles apply when multiple rules target the same element. Inline styles score 1000, IDs score 100, classes/pseudo-classes/attributes score 10, and type selectors score 1. The universal selector scores 0. When specificity ties, the later rule wins. The !important declaration overrides all specificity but should be used sparingly."
+  },
+  {
+    "id": "fe-tech-5",
+    "question": "Explain the difference between flexbox and CSS grid.",
+    "answer": "Flexbox is one-dimensional, arranging items in a row or column. It is ideal for component-level layouts like navbars or card rows. CSS Grid is two-dimensional, handling rows and columns simultaneously, and is better for page-level layouts. They are often used together: Grid for the overall layout and Flexbox for internal component alignment."
+  },
+  {
+    "id": "fe-tech-6",
+    "question": "What are React hooks? Explain useState and useEffect.",
+    "answer": "Hooks let you use state and lifecycle features in functional components. useState returns a state variable and setter function for managing local state. useEffect runs side effects after render, such as data fetching or subscriptions, with an optional dependency array to control when it runs. Returning a cleanup function from useEffect handles unsubscription."
+  },
+  {
+    "id": "fe-tech-7",
+    "question": "What is event bubbling and event delegation in JavaScript?",
+    "answer": "Event bubbling means an event on a child element propagates upward through parent elements. Event delegation attaches a single listener to a parent to handle events from all children, using event.target to identify the source. This is more efficient than attaching listeners to each child and works well for dynamically added elements."
+  },
+  {
+    "id": "fe-tech-8",
+    "question": "What is the difference between localStorage, sessionStorage, and cookies?",
+    "answer": "localStorage persists data with no expiration across browser sessions. sessionStorage clears when the tab closes. Both store up to 5MB and are JavaScript-only. Cookies are sent with every HTTP request, limited to 4KB, and can have expiration dates. Cookies support HttpOnly (blocks JS access) and Secure (HTTPS only) flags for security."
+  },
+  {
+    "id": "fe-tech-9",
+    "question": "How does lazy loading improve frontend performance?",
+    "answer": "Lazy loading defers loading non-critical resources until needed, reducing initial page load time. In React, React.lazy() and Suspense enable component-level lazy loading. Images can use the loading='lazy' attribute. It improves metrics like Time to Interactive and Largest Contentful Paint, leading to better user experience and SEO."
+  },
+  {
+    "id": "fe-tech-10",
+    "question": "What is Web Accessibility (a11y) and how do you implement it?",
+    "answer": "Web accessibility ensures websites work for people with disabilities. Implementation includes semantic HTML, alt text for images, sufficient color contrast, keyboard navigation support, ARIA roles and attributes for dynamic content, captions for videos, and testing with screen readers. Following WCAG guidelines ensures compliance and benefits all users."
+  },
+  {
+    "id": "fs-tech-1",
+    "question": "Explain the difference between client-side and server-side rendering.",
+    "answer": "Client-side rendering sends minimal HTML and uses JavaScript to render content in the browser. It has faster subsequent navigation but slower initial load and poor SEO. Server-side rendering generates full HTML on the server per request, giving faster initial load and better SEO but more server load. Next.js supports both along with Static Site Generation for pre-built pages."
+  },
+  {
+    "id": "fs-tech-2",
+    "question": "What is CORS and how do you handle it?",
+    "answer": "CORS is a browser security mechanism that restricts requests to a different domain. The browser sends a preflight OPTIONS request; the server must respond with Access-Control-Allow-Origin headers. In Express, the cors middleware handles this. Misconfigurations can block legitimate requests or create security vulnerabilities."
+  },
+  {
+    "id": "fs-tech-3",
+    "question": "How do you connect a React frontend to a Node.js backend?",
+    "answer": "React communicates with a Node.js/Express backend via HTTP requests using fetch or axios, calling REST API endpoints. During development, a proxy in package.json avoids CORS issues. The backend handles routing, business logic, and database queries, returning JSON. Authentication is handled via JWT tokens in Authorization headers."
+  },
+  {
+    "id": "fs-tech-4",
+    "question": "What is the difference between REST and GraphQL?",
+    "answer": "REST uses multiple fixed endpoints that return predefined data, leading to over-fetching or under-fetching. GraphQL uses a single endpoint where clients specify exactly the data they need in a query. GraphQL is strongly typed, supports subscriptions for real-time updates, and avoids versioning. REST is simpler; GraphQL suits complex, interconnected data with diverse client needs."
+  },
+  {
+    "id": "fs-tech-5",
+    "question": "Explain how sessions and cookies work for authentication.",
+    "answer": "After login, the server creates a session stored server-side and sends a session ID via a cookie. On each request, the browser sends the cookie, the server looks up the session and authenticates. Sessions are stateful. Cookies should be HttpOnly to prevent JS access and Secure for HTTPS-only transmission. Sessions must be invalidated on logout."
+  },
+  {
+    "id": "fs-tech-6",
+    "question": "What is an ORM and why would you use one?",
+    "answer": "An ORM maps database tables to code objects, letting developers query databases without raw SQL. It reduces boilerplate, prevents SQL injection via parameterized queries, and makes switching databases easier. Popular ORMs include Prisma and Sequelize for Node.js and SQLAlchemy for Python. The tradeoff is potential performance overhead for complex queries."
+  },
+  {
+    "id": "fs-tech-7",
+    "question": "How would you optimize a slow database query in a full stack app?",
+    "answer": "Use EXPLAIN to analyze the query plan. Add indexes on columns used in WHERE, JOIN, and ORDER BY. Avoid SELECT * and fetch only needed columns. Fix N+1 problems with JOINs or eager loading. Use pagination for large result sets. Cache frequent queries with Redis. Consider read replicas or denormalization for read-heavy workloads."
+  },
+  {
+    "id": "fs-tech-8",
+    "question": "What is server-side rendering (SSR) in Next.js and when would you use it?",
+    "answer": "SSR in Next.js uses getServerSideProps to fetch data on the server at request time, passing it as props. Use it when page content changes frequently based on request data and requires SEO. For less dynamic pages, getStaticProps (SSG) is preferred for better performance. SSR ensures fresh data per request but adds server load."
+  },
+  {
+    "id": "fs-tech-9",
+    "question": "What is the role of environment variables in a full stack application?",
+    "answer": "Environment variables store configuration like API keys, database URLs, and secrets outside the codebase, allowing different values per environment without code changes. In Node.js, dotenv loads them from a .env file. They must never be committed to version control. In Next.js, NEXT_PUBLIC_ prefix exposes variables to the browser; others remain server-side only."
+  },
+  {
+    "id": "fs-tech-10",
+    "question": "How do you handle file uploads in a full stack application?",
+    "answer": "On the frontend, use a file input and send via FormData as multipart/form-data. On the backend, use multer middleware to parse the upload. In production, store files in cloud storage like AWS S3 or Cloudinary and save the returned URL to the database. Always validate file type and size, and sanitize filenames to prevent security vulnerabilities."
+  },
+  {
+    "id": "devops-tech-1",
+    "question": "What is the difference between continuous integration and continuous deployment?",
+    "answer": "CI is the practice of frequently merging code into a shared repo where automated builds and tests run. CD extends CI by automatically deploying every passing change to production. Continuous Delivery requires a manual approval step before production. Together, CI/CD reduces manual effort, speeds up releases, and catches bugs early."
+  },
+  {
+    "id": "devops-tech-2",
+    "question": "Explain what Docker is and why it is used.",
+    "answer": "Docker packages applications and all their dependencies into portable containers that run consistently across environments. Unlike VMs, containers share the host OS kernel and are lightweight and fast to start. Docker solves environment inconsistency issues and integrates well with CI/CD pipelines and orchestration platforms like Kubernetes."
+  },
+  {
+    "id": "devops-tech-3",
+    "question": "What is Kubernetes and what problem does it solve?",
+    "answer": "Kubernetes automates deployment, scaling, and management of containerized applications across multiple hosts. It provides automatic scaling, self-healing, load balancing, rolling updates, and service discovery. It uses pods, deployments, services, and namespaces. Kubernetes is the industry standard for running containerized workloads at scale."
+  },
+  {
+    "id": "devops-tech-4",
+    "question": "What is Infrastructure as Code (IaC)? Name some tools used for it.",
+    "answer": "IaC manages infrastructure through machine-readable configuration files instead of manual processes, enabling versioning, automation, and consistency. Tools include Terraform (cloud-agnostic), AWS CloudFormation (AWS-specific), Pulumi (uses general-purpose languages), and Ansible (configuration management). IaC lets teams treat infrastructure like application code."
+  },
+  {
+    "id": "devops-tech-5",
+    "question": "What is the difference between a Docker image and a Docker container?",
+    "answer": "A Docker image is a read-only template built from a Dockerfile containing the app, dependencies, and config. A container is a running instance of an image. Multiple containers can run from the same image. The image is immutable; the container adds a writable layer at runtime. Stopping a container does not delete the image."
+  },
+  {
+    "id": "devops-tech-6",
+    "question": "Explain the concept of blue-green deployment.",
+    "answer": "Blue-green deployment maintains two identical environments: one live (blue) serving traffic, one idle (green) for the new version. After testing green, traffic is switched instantly via a load balancer or DNS change. If issues arise, rollback is immediate by switching back. It eliminates downtime but requires double the infrastructure."
+  },
+  {
+    "id": "devops-tech-7",
+    "question": "What is a CI/CD pipeline? Describe its typical stages.",
+    "answer": "A CI/CD pipeline automates code from development to production. Typical stages: Source (code push triggers pipeline), Build (compile or bundle), Test (unit, integration, e2e tests), Security Scan (vulnerability checks), Artifact Creation (Docker image or build artifact), Staging Deployment, and Production Deployment. Tools include GitHub Actions, Jenkins, and GitLab CI."
+  },
+  {
+    "id": "devops-tech-8",
+    "question": "How do you monitor application health in a production environment?",
+    "answer": "Monitoring involves metrics (CPU, memory, error rates) collected with Prometheus and visualized with Grafana, centralized logging with ELK Stack or Datadog, and distributed tracing with Jaeger. Alerts notify teams when thresholds are breached. Health check endpoints let load balancers detect unhealthy instances. Uptime monitoring checks external availability."
+  },
+  {
+    "id": "devops-tech-9",
+    "question": "What is the role of Nginx in a DevOps setup?",
+    "answer": "Nginx acts as a web server for static files and a reverse proxy forwarding requests to backend services. It provides load balancing, SSL/TLS termination, caching, rate limiting, and request compression. It serves as a single entry point routing traffic based on URL paths. Its non-blocking architecture handles heavy loads efficiently."
+  },
+  {
+    "id": "devops-tech-10",
+    "question": "Explain the concept of container orchestration.",
+    "answer": "Container orchestration automates managing containerized applications at scale, including deployment, scaling, networking, and availability. Platforms like Kubernetes schedule containers on appropriate nodes, restart failed ones, scale based on load, manage inter-container networking, and handle rolling updates. They ensure the desired system state is maintained for high availability and resilience."
+  },
+  {
+    "id": "ds-tech-1",
+    "question": "What is the difference between supervised, unsupervised, and reinforcement learning?",
+    "answer": "Supervised learning trains on labeled data to predict outputs. Unsupervised learning finds patterns in unlabeled data via clustering or dimensionality reduction. Reinforcement learning trains an agent through environment interaction with rewards and penalties to maximize cumulative reward. Each suits different problems: supervised for prediction, unsupervised for exploration, reinforcement for sequential decision-making."
+  },
+  {
+    "id": "ds-tech-2",
+    "question": "What is the bias-variance tradeoff?",
+    "answer": "Bias is error from oversimplified model assumptions causing underfitting. Variance is sensitivity to training data fluctuations causing overfitting. Simple models have high bias and low variance; complex models have low bias and high variance. The goal is to minimize total error on unseen data by finding the right balance of model complexity."
+  },
+  {
+    "id": "ds-tech-3",
+    "question": "Explain how a random forest algorithm works.",
+    "answer": "Random forest builds multiple decision trees on random bootstrap samples of training data (bagging). At each split, only a random subset of features is considered, creating diversity among trees. Classification uses majority vote; regression uses the average. Random forests are robust to overfitting, handle missing values, and provide feature importance scores."
+  },
+  {
+    "id": "ds-tech-4",
+    "question": "What is cross-validation and why is it important?",
+    "answer": "Cross-validation evaluates model performance on unseen data by splitting into k folds, training on k-1 and testing on one, repeating k times, and averaging results. It reduces the risk of overfitting to a single train-test split, gives a reliable performance estimate, and helps with hyperparameter tuning and model selection."
+  },
+  {
+    "id": "ds-tech-5",
+    "question": "What is the difference between correlation and causation?",
+    "answer": "Correlation means two variables change together. Causation means one directly causes the other. Correlation does not imply causation; both may be caused by a third variable. For example, ice cream sales and drowning rates are correlated but both are caused by hot weather. Establishing causation requires controlled experiments or causal inference techniques."
+  },
+  {
+    "id": "ds-tech-6",
+    "question": "How do you handle missing data in a dataset?",
+    "answer": "Strategies include deletion (remove rows/columns if missingness is minimal and random), simple imputation (replace with mean, median, or mode), advanced imputation (KNN or iterative methods), or using algorithms that handle missing values natively like XGBoost. The right strategy depends on the amount and pattern of missingness (MCAR, MAR, or MNAR)."
+  },
+  {
+    "id": "ds-tech-7",
+    "question": "What is PCA (Principal Component Analysis) and when would you use it?",
+    "answer": "PCA reduces dimensionality by transforming data into principal components — orthogonal axes of maximum variance. Use it when features are highly correlated, to reduce computational cost, visualize high-dimensional data, or remove noise. Components are linear combinations of original features and may be harder to interpret. PCA is unsupervised and sensitive to feature scaling."
+  },
+  {
+    "id": "ds-tech-8",
+    "question": "What is the difference between L1 and L2 regularization?",
+    "answer": "L1 (Lasso) adds the absolute values of coefficients as a penalty, shrinking some to exactly zero and performing feature selection, producing sparse models. L2 (Ridge) adds squared values, shrinking all coefficients toward zero but rarely to exactly zero. L1 suits sparse feature sets; L2 suits datasets where most features contribute. Elastic Net combines both."
+  },
+  {
+    "id": "ds-tech-9",
+    "question": "Explain how gradient boosting works.",
+    "answer": "Gradient boosting builds models sequentially. Each new weak learner (typically a small decision tree) is trained on the residual errors of the current ensemble and added with a learning rate. It minimizes a loss function using gradient descent in function space. Popular implementations include XGBoost, LightGBM, and CatBoost."
+  },
+  {
+    "id": "ds-tech-10",
+    "question": "What is A/B testing and how do you evaluate results statistically?",
+    "answer": "A/B testing shows two versions to different user groups to determine which performs better on a metric. Results are evaluated using hypothesis tests like a t-test or chi-square test. A p-value below 0.05 suggests the difference is statistically significant. Also consider practical significance, statistical power, sample size, and avoid peeking before the test completes."
+  },
+  {
+    "id": "de-tech-1",
+    "question": "What is the difference between a data warehouse and a data lake?",
+    "answer": "A data warehouse stores structured, processed data with a predefined schema optimized for fast SQL queries. Examples: Redshift, BigQuery. A data lake stores raw data in any format at scale with schema applied at query time. It is more flexible and cheaper for large volumes but harder to query. Modern architectures often use both, with the lake feeding the warehouse."
+  },
+  {
+    "id": "de-tech-2",
+    "question": "Explain what ETL stands for and describe the process.",
+    "answer": "ETL stands for Extract, Transform, Load. Extract pulls data from sources like databases or APIs. Transform cleans, enriches, and restructures it: handling missing values, standardizing formats, and applying business rules. Load writes the result to a target like a data warehouse. Modern approaches use ELT, loading raw data first and transforming inside the warehouse."
+  },
+  {
+    "id": "de-tech-3",
+    "question": "What is Apache Spark and when would you use it over Hadoop?",
+    "answer": "Spark is a distributed computing framework that processes data in-memory, making it much faster than Hadoop MapReduce for iterative algorithms and interactive queries. It supports batch processing, streaming, machine learning, and graph processing in one framework. Use Spark for faster processing, streaming, or ML workloads. Use Hadoop for very large batch jobs where disk-based processing is acceptable."
+  },
+  {
+    "id": "de-tech-4",
+    "question": "What is data partitioning and why is it important in large datasets?",
+    "answer": "Partitioning divides large datasets into smaller chunks based on a key like date or region. It improves query performance via partition pruning — scanning only relevant partitions. It also enables parallel processing. Poor partitioning causes data skew where some partitions are much larger, creating bottlenecks. Proper partitioning reduces query cost in systems like Hive or BigQuery."
+  },
+  {
+    "id": "de-tech-5",
+    "question": "What is schema-on-read vs schema-on-write?",
+    "answer": "Schema-on-write defines the structure before storing data, validating at write time. Used in relational databases and warehouses; ensures data quality and fast reads. Schema-on-read stores raw data without enforcing structure and applies schema at query time. Used in data lakes; offers flexibility but may produce inconsistent results if data quality is poor."
+  },
+  {
+    "id": "de-tech-6",
+    "question": "How do you handle data quality issues in a pipeline?",
+    "answer": "Add validation checks at ingestion to reject or quarantine bad records. Log data quality metrics and set up alerts. Use tools like Great Expectations or dbt tests to define data contracts. Apply deduplication logic and imputation for missing values. Monitor for schema drift from source systems. Data quality should be measured and reported as part of pipeline observability."
+  },
+  {
+    "id": "de-tech-7",
+    "question": "What is Apache Kafka and how does it work?",
+    "answer": "Kafka is a distributed event streaming platform for high-throughput, fault-tolerant data pipelines. Producers publish messages to topics divided into partitions across brokers. Consumers subscribe and read messages. Kafka retains messages for a configurable period, enabling replay. It is designed for durability via replication, horizontal scalability, and low latency. Used for event sourcing, log aggregation, and decoupling microservices."
+  },
+  {
+    "id": "de-tech-8",
+    "question": "Explain the concept of data lineage.",
+    "answer": "Data lineage tracks the origin, movement, transformation, and destination of data throughout its lifecycle. It provides an audit trail of where data comes from, how it was transformed, and where it is used. It is essential for debugging pipeline failures, understanding upstream change impacts, regulatory compliance, and building trust in data. Tools include Apache Atlas, Marquez, and dbt."
+  },
+  {
+    "id": "de-tech-9",
+    "question": "What is the difference between batch processing and stream processing?",
+    "answer": "Batch processing collects and processes data in large chunks at scheduled intervals, suited for non-time-sensitive workloads like daily reports. Stream processing handles data continuously as it arrives, used for fraud detection and real-time dashboards. Spark handles batch processing; Kafka and Flink handle streaming. The tradeoff is complexity and cost versus data freshness."
+  },
+  {
+    "id": "de-tech-10",
+    "question": "What is a star schema and how is it used in data warehousing?",
+    "answer": "A star schema has a central fact table storing measurable metrics with foreign keys to dimension tables storing descriptive attributes like customer names, products, and dates. It is denormalized for fast read performance and easy for analysts to understand. Star schemas enable efficient aggregation queries and are the foundation of OLAP systems."
+  },
+  {
+    "id": "mob-tech-1",
+    "question": "What is the difference between React Native and Flutter?",
+    "answer": "React Native uses JavaScript and renders using native platform components, allowing code sharing with React web apps. Flutter uses Dart and renders with its own graphics engine for pixel-perfect consistency across platforms. React Native suits teams with JavaScript expertise or web code sharing needs; Flutter suits performance-critical apps with custom UI."
+  },
+  {
+    "id": "mob-tech-2",
+    "question": "How does the React Native bridge work?",
+    "answer": "The React Native bridge is the communication layer between JavaScript and native platform code. JavaScript runs on a separate thread and sends asynchronous serialized messages to native modules over the bridge. The new architecture replaces the bridge with JSI, allowing direct synchronous calls from JavaScript to native code, eliminating serialization overhead for better performance."
+  },
+  {
+    "id": "mob-tech-3",
+    "question": "What is the difference between stateful and stateless widgets in Flutter?",
+    "answer": "Stateless widgets are immutable and rebuilt only when their parent changes, suitable for static UI. Stateful widgets maintain mutable state via a separate State object. Calling setState() triggers a rebuild with updated state. Use stateful widgets for interactive elements like forms, toggles, and animations."
+  },
+  {
+    "id": "mob-tech-4",
+    "question": "How do you manage state in a React Native application?",
+    "answer": "For local state, use useState and useReducer. For shared state, use React Context for simple cases or Redux, Zustand, or Jotai for complex global state. Redux uses a single store with actions and reducers for predictable state management. React Query or SWR manage server state, handling fetching, caching, and synchronization."
+  },
+  {
+    "id": "mob-tech-5",
+    "question": "What is Expo and how does it simplify React Native development?",
+    "answer": "Expo is a framework built on React Native that provides a managed workflow with pre-built native modules and tools, eliminating the need to set up native build environments for many use cases. Expo Go allows testing on physical devices instantly. The SDK provides APIs for camera, location, and notifications. The bare workflow allows ejecting for full native access."
+  },
+  {
+    "id": "mob-tech-6",
+    "question": "Explain how navigation works in React Native using React Navigation.",
+    "answer": "React Navigation provides navigator types: Stack (push/pop transitions), Tab (bottom/top tabs), and Drawer (side menu). The NavigationContainer manages navigation state at the root. Screens use navigation.navigate() to move between routes and receive navigation and route props. Deep linking can be configured to open specific screens from external URLs."
+  },
+  {
+    "id": "mob-tech-7",
+    "question": "How do you optimize performance in a Flutter application?",
+    "answer": "Use const constructors to avoid unnecessary rebuilds, ListView.builder for large lists to render only visible items, isolates for heavy computation off the main thread, image caching and appropriate resolution, RepaintBoundary to isolate expensive paint operations, and Flutter DevTools for profiling. Minimize setState calls and lift state appropriately."
+  },
+  {
+    "id": "mob-tech-8",
+    "question": "What is the difference between AsyncStorage and SQLite in mobile apps?",
+    "answer": "AsyncStorage is a simple key-value store for small data like preferences and tokens. It stores strings only with no query capabilities. SQLite is a relational database supporting structured data, complex queries, and large datasets offline, suitable for notes apps or inventory systems. Use AsyncStorage for simple persistence and SQLite for complex data needs."
+  },
+  {
+    "id": "mob-tech-9",
+    "question": "How do you handle push notifications in React Native?",
+    "answer": "Configure APNs for iOS and Firebase Cloud Messaging for Android. Libraries like Expo Notifications simplify cross-platform setup. The flow: register device for a push token, send token to backend, use a notification service to send pushes. Local notifications handle in-app alerts. Background notification handling requires configuring background modes on both platforms."
+  },
+  {
+    "id": "mob-tech-10",
+    "question": "What are platform-specific components in React Native and when do you use them?",
+    "answer": "Use Platform.OS to check the platform and Platform.select() to return platform-specific values. For larger differences, create separate .ios.js and .android.js files; React Native picks the correct one automatically. Use this for navigation gestures, status bar handling, date pickers, or native UI patterns that should feel native on each platform."
+  },
+  {
+    "id": "cloud-tech-1",
+    "question": "What is the difference between IaaS, PaaS, and SaaS?",
+    "answer": "IaaS provides virtualized resources like VMs and storage; users manage OS and apps. Examples: AWS EC2, Azure VMs. PaaS provides a managed platform for deploying apps without managing infrastructure. Examples: Heroku, Google App Engine. SaaS delivers fully managed software over the internet. Examples: Gmail, Salesforce. Each trades control for convenience at different levels."
+  },
+  {
+    "id": "cloud-tech-2",
+    "question": "What is auto-scaling and how does it work in cloud environments?",
+    "answer": "Auto-scaling adjusts compute resources based on demand, launching instances when metrics like CPU exceed a threshold and terminating them when demand drops. AWS offers Auto Scaling Groups; Kubernetes uses Horizontal Pod Autoscaler. Policies include target tracking, step scaling, and scheduled scaling. It ensures availability during spikes and reduces cost during low usage."
+  },
+  {
+    "id": "cloud-tech-3",
+    "question": "Explain the shared responsibility model in cloud security.",
+    "answer": "The cloud provider secures the infrastructure — physical hardware, networking, and managed services. The customer secures what runs on it — data, IAM, application security, OS patching, and network config. The boundary shifts by service model: SaaS offloads more to the provider; IaaS leaves more to the customer. Understanding this model is critical for proper cloud security architecture."
+  },
+  {
+    "id": "cloud-tech-4",
+    "question": "What is a VPC (Virtual Private Cloud) and why is it important?",
+    "answer": "A VPC is a logically isolated network section where you control IP ranges, subnets, route tables, and access controls. Resources are not internet-accessible by default. Public subnets hold load balancers; private subnets hold databases. VPC peering and VPNs enable connectivity between VPCs or on-premises networks. VPCs are essential for security isolation in cloud architectures."
+  },
+  {
+    "id": "cloud-tech-5",
+    "question": "What is the difference between object storage and block storage?",
+    "answer": "Object storage stores data as objects accessed via HTTP APIs, highly scalable and cheap, ideal for images, videos, backups, and logs. Examples: AWS S3, Google Cloud Storage. Block storage presents raw volumes formatted with a file system, attached to VMs like a hard drive, offering low latency and high IOPS for databases and OS disks. Examples: AWS EBS, Azure Managed Disks."
+  },
+  {
+    "id": "cloud-tech-6",
+    "question": "What are cloud availability zones and regions?",
+    "answer": "A region is a geographical area with multiple data centers. An availability zone is one or more physically separate data centers within a region connected by low-latency networking. Deploying across multiple AZs protects against data center failures. Deploying across multiple regions protects against regional disasters and reduces latency for global users."
+  },
+  {
+    "id": "cloud-tech-7",
+    "question": "What is serverless computing and what are its advantages and drawbacks?",
+    "answer": "Serverless runs code without managing servers; the provider allocates resources and charges only for execution time. Examples: AWS Lambda, Google Cloud Functions. Advantages: no server management, automatic scaling, reduced cost for sporadic workloads. Drawbacks: cold start latency, execution time limits, limited customization, and vendor lock-in. Best for event-driven, stateless functions with unpredictable traffic."
+  },
+  {
+    "id": "cloud-tech-8",
+    "question": "How does a load balancer work in a cloud architecture?",
+    "answer": "A load balancer distributes incoming traffic across backend instances to prevent overload, routing only to healthy ones. Algorithms include round robin, least connections, and IP hash. It enables zero-downtime deployments by routing traffic away from updating instances. Application Load Balancers route based on HTTP content (Layer 7); Network Load Balancers route based on IP and port (Layer 4)."
+  },
+  {
+    "id": "cloud-tech-9",
+    "question": "What is a CDN (Content Delivery Network) and how does it improve performance?",
+    "answer": "A CDN caches and delivers content from edge nodes closest to the user, reducing latency and origin server load. It handles traffic spikes and provides DDoS protection. Used for static assets like images, CSS, JavaScript, and videos. Examples: Cloudflare, AWS CloudFront, Akamai. CDNs are essential for globally distributed applications."
+  },
+  {
+    "id": "cloud-tech-10",
+    "question": "Explain the concept of multi-cloud strategy and its benefits.",
+    "answer": "Multi-cloud uses services from multiple providers like AWS, Azure, and Google Cloud. Benefits include avoiding vendor lock-in, leveraging best-of-breed services, improving resilience, and meeting data residency requirements. Challenges include increased management complexity and required cross-platform skills. Tools like Terraform and Kubernetes enable cloud-agnostic infrastructure management."
+  },
+  {
+    "id": "cyber-tech-1",
+    "question": "What is the difference between authentication and authorization?",
+    "answer": "Authentication verifies identity — confirming who you are. Methods include passwords, MFA, and biometrics. Authorization determines what an authenticated user is allowed to do — what resources they can access. Authorization always follows authentication. For example, logging in is authentication; accessing the admin panel is authorization."
+  },
+  {
+    "id": "cyber-tech-2",
+    "question": "What is a SQL injection attack and how do you prevent it?",
+    "answer": "SQL injection inserts malicious SQL into an input field incorporated into a database query, allowing attackers to access, modify, or delete data. Prevention: use parameterized queries or prepared statements, ORM frameworks, validate and sanitize inputs, apply least privilege to database accounts, and use web application firewalls to detect injection attempts."
+  },
+  {
+    "id": "cyber-tech-3",
+    "question": "Explain what a man-in-the-middle attack is.",
+    "answer": "A MITM attack intercepts communication between two parties who believe they are communicating directly. The attacker relays messages while eavesdropping or injecting malicious content. Common forms include ARP spoofing and SSL stripping. Prevention: HTTPS with valid TLS certificates, HSTS headers, certificate pinning, mutual TLS, and avoiding unsecured public Wi-Fi."
+  },
+  {
+    "id": "cyber-tech-4",
+    "question": "What is the difference between symmetric and asymmetric encryption?",
+    "answer": "Symmetric encryption uses the same key for encryption and decryption. It is fast for large data but requires secure key sharing. Examples: AES, DES. Asymmetric encryption uses a public key for encryption and a private key for decryption, eliminating key distribution issues but much slower. Examples: RSA, ECC. In practice, asymmetric exchanges a symmetric key used for actual data encryption, as in TLS."
+  },
+  {
+    "id": "cyber-tech-5",
+    "question": "What is a zero-day vulnerability?",
+    "answer": "A zero-day is a security flaw unknown to the vendor with no patch available. Attackers exploit it before any defense is possible. Zero-days are highly valuable in the cybersecurity market. Defense strategies include defense-in-depth, network segmentation, behavior-based intrusion detection, and rapid patch deployment once a vendor fix is released."
+  },
+  {
+    "id": "cyber-tech-6",
+    "question": "What is penetration testing and what are its phases?",
+    "answer": "Pen testing is an authorized simulated attack to identify vulnerabilities. Phases: Reconnaissance (gather target info), Scanning (identify open ports and vulnerabilities with tools like Nmap), Exploitation (exploit vulnerabilities to gain access), Post-Exploitation (assess extent of access and impact), and Reporting (document findings and remediation). Can be black box, white box, or grey box."
+  },
+  {
+    "id": "cyber-tech-7",
+    "question": "Explain the concept of least privilege in security.",
+    "answer": "Least privilege grants users, processes, and systems only the minimum access needed for their function. It limits damage from compromised accounts or errors. Implementation includes RBAC, regular permission reviews and revocations, just-in-time access, and access log auditing. It is a foundational security principle that reduces the attack surface."
+  },
+  {
+    "id": "cyber-tech-8",
+    "question": "What is a DDoS attack and how do you mitigate it?",
+    "answer": "A DDoS attack floods a target with massive traffic from a botnet, overwhelming resources and making it unavailable. Mitigation: use CDNs and DDoS protection services like Cloudflare or AWS Shield, rate limit excessive requests, analyze traffic to distinguish attacks from legitimate users, auto-scale to absorb spikes, and configure firewalls to block known malicious IPs."
+  },
+  {
+    "id": "cyber-tech-9",
+    "question": "What is an SSL/TLS certificate and how does HTTPS work?",
+    "answer": "A TLS certificate authenticates a website and enables encrypted communication. During the TLS handshake, the client requests the server's certificate, verifies it with a trusted CA, negotiates encryption algorithms, and exchanges a session key using asymmetric encryption. All subsequent data is encrypted with this symmetric session key, ensuring confidentiality, integrity, and authentication."
+  },
+  {
+    "id": "cyber-tech-10",
+    "question": "What is the OWASP Top 10 and why is it important?",
+    "answer": "The OWASP Top 10 is a list of the ten most critical web application security risks, including Injection, Broken Authentication, Sensitive Data Exposure, Broken Access Control, Security Misconfiguration, XSS, Insecure Deserialization, and more. It is a widely accepted standard for prioritizing security efforts, educating development teams, and assessing application security posture."
+  },
+  {
+    "id": "se-tech-11",
+    "question": "What is the difference between an abstract class and an interface?",
+    "answer": "An abstract class can have both implemented and abstract methods, can hold state (fields), and a class can only inherit one abstract class. An interface defines a contract of methods that implementing classes must fulfill, with no state and no implementation (in most languages). A class can implement multiple interfaces. Use abstract classes when sharing code among related classes; use interfaces when defining capabilities that unrelated classes can share."
+  },
+  {
+    "id": "se-tech-12",
+    "question": "What is memoization and how does it improve performance?",
+    "answer": "Memoization is an optimization technique that caches the results of expensive function calls and returns the cached result when the same inputs occur again. It trades memory for speed. For example, in a recursive Fibonacci function, memoizing previously computed values reduces time complexity from O(2^n) to O(n). It is most effective for pure functions with repeated calls using the same arguments, such as in dynamic programming problems."
+  },
+  {
+    "id": "se-tech-13",
+    "question": "Explain the concept of object-oriented programming and its four pillars.",
+    "answer": "Object-oriented programming organizes code into objects that combine data and behavior. The four pillars are: Encapsulation (bundling data and methods together, hiding internal state), Abstraction (exposing only necessary details and hiding complexity), Inheritance (allowing a class to derive properties and behavior from another class), and Polymorphism (allowing objects of different classes to be treated as instances of a shared superclass, with methods behaving differently based on the object)."
+  },
+  {
+    "id": "se-tech-14",
+    "question": "What is a hash table and how does it handle collisions?",
+    "answer": "A hash table stores key-value pairs using a hash function to map keys to array indices, allowing O(1) average-time lookups. Collisions occur when two keys hash to the same index. Common resolution strategies include chaining (each bucket holds a linked list of entries) and open addressing (probing other buckets until an empty one is found, using linear, quadratic, or double hashing). Good hash functions and appropriate load factors minimize collisions."
+  },
+  {
+    "id": "se-tech-15",
+    "question": "What is the difference between depth-first search and breadth-first search?",
+    "answer": "Depth-first search (DFS) explores as far as possible along each branch before backtracking, using a stack or recursion. It is useful for detecting cycles, topological sorting, and solving mazes. Breadth-first search (BFS) explores all neighbors at the current depth before moving deeper, using a queue. It is useful for finding the shortest path in unweighted graphs. DFS uses less memory for deep graphs; BFS guarantees shortest path but uses more memory."
+  },
+  {
+    "id": "se-tech-16",
+    "question": "What is a deadlock and how can it be prevented?",
+    "answer": "A deadlock occurs when two or more threads are each waiting for a resource held by the other, causing all to be stuck indefinitely. The four conditions for deadlock are mutual exclusion, hold and wait, no preemption, and circular wait. Prevention strategies include acquiring locks in a consistent order to avoid circular wait, using timeouts, employing lock-free data structures, and using deadlock detection algorithms to identify and resolve cycles."
+  },
+  {
+    "id": "se-tech-17",
+    "question": "Explain the difference between synchronous and asynchronous programming.",
+    "answer": "Synchronous programming executes tasks sequentially; each operation must complete before the next begins, blocking the thread. Asynchronous programming allows tasks to run without blocking, enabling other operations to continue while waiting for slow tasks like I/O to complete. Async programming uses callbacks, promises, or async/await syntax. It is essential for building responsive applications that handle many concurrent operations, such as web servers processing thousands of simultaneous requests."
+  },
+  {
+    "id": "se-tech-18",
+    "question": "What is a stack overflow error and what causes it?",
+    "answer": "A stack overflow error occurs when the call stack exceeds its maximum size, typically due to infinite or excessively deep recursion where each function call adds a frame to the stack without returning. It can also be caused by very deeply nested function calls. Prevention involves adding correct base cases to recursive functions, using iterative approaches for deep recursion, or increasing stack size limits in environments that allow it."
+  },
+  {
+    "id": "se-tech-19",
+    "question": "What is the difference between a graph and a tree data structure?",
+    "answer": "A tree is a hierarchical, acyclic, connected graph with a root node where each node has exactly one parent (except the root). A graph is a more general structure with nodes (vertices) and edges that can have cycles, be disconnected, and have edges in any direction. Trees are a subset of graphs. Graphs can be directed or undirected and weighted or unweighted. Trees are used for hierarchical data; graphs for networks, routes, and relationships."
+  },
+  {
+    "id": "se-tech-20",
+    "question": "What is dependency injection and why is it useful?",
+    "answer": "Dependency injection is a design pattern where a class receives its dependencies from an external source rather than creating them internally. Instead of hardcoding dependencies, they are passed in via constructors, setters, or interfaces. This makes code more modular, testable (dependencies can be mocked), and maintainable. It follows the Dependency Inversion Principle and is commonly managed by DI frameworks like Spring (Java) or providers in NestJS."
+  },
+  {
+    "id": "py-tech-11",
+    "question": "What is the difference between is and == in Python?",
+    "answer": "== checks value equality — whether two objects have the same value. is checks identity equality — whether two variables point to the exact same object in memory. For example, two separate lists with identical contents are == but not is. Small integers and interned strings may share identity due to Python's optimization, but relying on is for value comparison is incorrect. Use == for comparing values and is only for comparing identity, such as checking if a value is None."
+  },
+  {
+    "id": "py-tech-12",
+    "question": "What are Python context managers and how do you use them?",
+    "answer": "Context managers manage resources by ensuring setup and teardown actions occur correctly, even if an error arises. They are used with the with statement. For example, with open('file.txt') as f automatically closes the file when the block exits. You can create custom context managers by implementing __enter__ and __exit__ dunder methods in a class, or by using the @contextmanager decorator from the contextlib module with a generator function. They are ideal for managing files, database connections, and locks."
+  },
+  {
+    "id": "py-tech-13",
+    "question": "What is the difference between multiprocessing and multithreading in Python?",
+    "answer": "Multithreading runs multiple threads within the same process sharing memory, but the GIL prevents true parallel CPU execution, making it suitable for I/O-bound tasks. Multiprocessing spawns separate processes with their own memory spaces, bypassing the GIL and enabling true parallelism for CPU-bound tasks. Multiprocessing has higher memory overhead and inter-process communication complexity, but is the correct choice when you need to fully utilize multiple CPU cores for computation-heavy work."
+  },
+  {
+    "id": "py-tech-14",
+    "question": "How does Python's garbage collection work beyond reference counting?",
+    "answer": "Beyond reference counting, Python uses a cyclic garbage collector to detect and clean up reference cycles — situations where objects reference each other but are unreachable from the program. The gc module implements a generational garbage collector that divides objects into three generations based on survival time. Younger generations are collected more frequently. Objects that survive collection are promoted to older generations. The gc module can be controlled manually and collection can be triggered with gc.collect()."
+  },
+  {
+    "id": "py-tech-15",
+    "question": "What are Python's dunder (magic) methods? Give examples.",
+    "answer": "Dunder (double underscore) methods are special methods that Python calls implicitly for built-in operations. They allow classes to define behavior for operators and built-in functions. Examples: __init__ is called on object creation, __str__ defines string representation, __len__ defines behavior for len(), __add__ defines the + operator, __eq__ defines == comparison, __iter__ and __next__ make objects iterable, and __enter__/__exit__ enable context manager support. They make custom classes integrate naturally with Python's syntax."
+  },
+  {
+    "id": "py-tech-16",
+    "question": "What is the difference between a module and a package in Python?",
+    "answer": "A module is a single Python file (.py) containing functions, classes, and variables that can be imported. A package is a directory containing multiple modules and an __init__.py file (optional in Python 3.3+) that marks it as a package. Packages allow organizing related modules into a namespace hierarchy. For example, import numpy imports the numpy package, and from numpy import array imports a specific module or name. Packages can contain sub-packages, creating a structured project layout."
+  },
+  {
+    "id": "py-tech-17",
+    "question": "How do you handle exceptions in Python? What is the difference between except, else, and finally?",
+    "answer": "Python uses try/except blocks to handle exceptions. The except block runs if an exception occurs in the try block. You can catch specific exception types or use a bare except for all. The else block runs only if no exception occurred in the try block, useful for code that should only run on success. The finally block always runs regardless of whether an exception occurred, used for cleanup like closing files or releasing resources. Multiple except clauses can handle different exception types."
+  },
+  {
+    "id": "py-tech-18",
+    "question": "What is a lambda function in Python and when would you use one?",
+    "answer": "A lambda is an anonymous, single-expression function defined with the lambda keyword. Syntax: lambda arguments: expression. For example, lambda x: x * 2 doubles a value. Lambdas are used for short, throwaway functions, especially as arguments to higher-order functions like map(), filter(), and sorted(). For example, sorted(items, key=lambda x: x['name']). They cannot contain statements or multiple expressions. For complex logic, a named function defined with def is preferred for readability."
+  },
+  {
+    "id": "py-tech-19",
+    "question": "What is the purpose of the __init__.py file in Python?",
+    "answer": "The __init__.py file marks a directory as a Python package, allowing its modules to be imported. In Python 2, it was required; in Python 3.3+, namespace packages work without it, but it is still commonly used. It can be empty or contain initialization code for the package, such as importing commonly used names to make them accessible at the package level. For example, placing from .module import MyClass in __init__.py allows users to import MyClass directly from the package."
+  },
+  {
+    "id": "py-tech-20",
+    "question": "What are abstract base classes in Python and when would you use them?",
+    "answer": "Abstract base classes (ABCs) are classes that cannot be instantiated and define a set of methods that subclasses must implement. They are created using the abc module and the ABC base class with the @abstractmethod decorator. ABCs enforce a contract: any concrete subclass that does not implement all abstract methods will raise a TypeError on instantiation. Use them when designing frameworks or libraries where you want to guarantee that subclasses implement specific interfaces, providing a structured inheritance hierarchy."
+  },
+  {
+    "id": "be-tech-11",
+    "question": "What is the difference between optimistic and pessimistic locking in databases?",
+    "answer": "Pessimistic locking locks a record when it is read, preventing others from modifying it until the lock is released. It is safe for high-conflict scenarios but reduces concurrency. Optimistic locking does not lock the record but checks at update time whether it was modified since it was read, typically using a version number or timestamp. If modified, the update fails and the operation must be retried. Optimistic locking is better for low-conflict scenarios and improves concurrency."
+  },
+  {
+    "id": "be-tech-12",
+    "question": "What are database transactions and what are the ACID properties?",
+    "answer": "A database transaction is a sequence of operations treated as a single unit of work. ACID properties ensure reliability: Atomicity (all operations succeed or none do), Consistency (the database moves from one valid state to another), Isolation (concurrent transactions do not interfere with each other), and Durability (committed transactions persist even after system failures). ACID compliance is essential for financial systems and any application where data integrity is critical."
+  },
+  {
+    "id": "be-tech-13",
+    "question": "What is rate limiting and how would you implement it in a backend API?",
+    "answer": "Rate limiting restricts how many requests a client can make in a given time window to prevent abuse and protect server resources. Common algorithms include fixed window (count requests per time window), sliding window (more accurate rolling count), and token bucket (clients consume tokens refilled at a fixed rate). Implementation options include using middleware like express-rate-limit in Node.js, storing counts in Redis for distributed systems, and returning 429 Too Many Requests with Retry-After headers when limits are exceeded."
+  },
+  {
+    "id": "be-tech-14",
+    "question": "What is the difference between a monolith and a serverless architecture?",
+    "answer": "A monolith is a single deployable unit containing all application functionality, simpler to develop and debug but harder to scale independently. Serverless architecture runs individual functions on cloud infrastructure that scales automatically per invocation without managing servers. Serverless reduces operational overhead and costs for variable workloads but introduces cold starts, execution time limits, and vendor lock-in. Monoliths suit stable, predictable workloads; serverless suits event-driven, sporadic workloads."
+  },
+  {
+    "id": "be-tech-15",
+    "question": "How do you secure a REST API?",
+    "answer": "Securing a REST API involves: using HTTPS to encrypt data in transit, authenticating requests with JWT or API keys, implementing authorization with role-based access control, validating and sanitizing all inputs to prevent injection attacks, applying rate limiting to prevent abuse, using CORS policies to restrict allowed origins, adding security headers, logging and monitoring for suspicious activity, keeping dependencies updated, and following the principle of least privilege for database and service accounts."
+  },
+  {
+    "id": "be-tech-16",
+    "question": "What is connection pooling and why is it important?",
+    "answer": "Connection pooling maintains a cache of database connections that can be reused rather than creating a new connection for every request. Establishing a database connection is expensive in time and resources. A pool creates a set of connections at startup and lends them to requests, returning them to the pool when done. This reduces latency, limits the number of simultaneous connections to the database, and improves throughput under load. Most ORMs and database clients include built-in connection pooling."
+  },
+  {
+    "id": "be-tech-17",
+    "question": "What is the difference between PUT and PATCH in REST APIs?",
+    "answer": "PUT replaces the entire resource with the provided data. If fields are omitted in the request, they are removed or reset to defaults. It is idempotent — calling it multiple times produces the same result. PATCH applies a partial update, modifying only the fields provided in the request and leaving others unchanged. Use PUT when replacing a full resource and PATCH for partial updates. PATCH is generally preferred for efficiency when only a subset of fields needs updating."
+  },
+  {
+    "id": "be-tech-18",
+    "question": "What is eventual consistency and how does it differ from strong consistency?",
+    "answer": "Strong consistency guarantees that after a write, all subsequent reads return the updated value immediately, regardless of which node serves the request. It is simple to reason about but requires coordination that limits availability and performance. Eventual consistency allows replicas to be temporarily out of sync after a write, but guarantees they will converge to the same value over time. It offers higher availability and performance in distributed systems but requires applications to handle stale reads. CAP theorem governs these tradeoffs."
+  },
+  {
+    "id": "be-tech-19",
+    "question": "What is a foreign key and how does it enforce referential integrity?",
+    "answer": "A foreign key is a column in one table that references the primary key of another table, creating a link between them. It enforces referential integrity by ensuring that a value in the foreign key column must exist in the referenced table, preventing orphaned records. For example, an orders table with a user_id foreign key ensures every order belongs to a valid user. The database can be configured to cascade deletes or updates, restrict them, or set the foreign key to null when the referenced record is deleted."
+  },
+  {
+    "id": "be-tech-20",
+    "question": "How would you design a URL shortener system?",
+    "answer": "A URL shortener maps long URLs to short codes. Key components: a unique short code generator (using base62 encoding of an auto-incremented ID or a random hash), a database storing the mapping of short code to original URL, a redirect service that looks up the short code and returns a 301 or 302 redirect, and a caching layer like Redis for frequently accessed codes. Considerations include collision handling for random codes, custom aliases, expiration of links, click analytics, and horizontal scaling for high read throughput."
+  },
+  {
+    "id": "ai-tech-11",
+    "question": "What is the difference between a CNN and an RNN?",
+    "answer": "A Convolutional Neural Network (CNN) is designed for grid-like data such as images. It uses convolutional layers to detect spatial features like edges and shapes, followed by pooling layers to reduce dimensionality. A Recurrent Neural Network (RNN) is designed for sequential data like text or time series. It maintains a hidden state that carries information across time steps, enabling it to model temporal dependencies. CNNs excel at image recognition; RNNs and their variants (LSTM, GRU) excel at language modeling and sequence tasks."
+  },
+  {
+    "id": "ai-tech-12",
+    "question": "What is attention mechanism in deep learning?",
+    "answer": "The attention mechanism allows a model to focus on the most relevant parts of the input when producing an output, rather than compressing all input information into a fixed-size vector. For each output step, attention computes a weighted sum of all input representations, where weights reflect relevance. Self-attention (used in transformers) computes attention between all positions in the same sequence, enabling the model to capture long-range dependencies without recurrence. Attention is the key innovation behind transformer models and modern NLP."
+  },
+  {
+    "id": "ai-tech-13",
+    "question": "What is the vanishing gradient problem and how is it addressed?",
+    "answer": "The vanishing gradient problem occurs during backpropagation in deep networks when gradients become extremely small as they are propagated back through many layers, causing early layers to learn very slowly or not at all. It is especially problematic for RNNs with long sequences. Solutions include using ReLU activation functions instead of sigmoid or tanh, batch normalization, residual connections (skip connections) as in ResNets, and using LSTM or GRU cells in RNNs which have gating mechanisms designed to preserve gradients over long sequences."
+  },
+  {
+    "id": "ai-tech-14",
+    "question": "What is the difference between batch gradient descent, stochastic gradient descent, and mini-batch gradient descent?",
+    "answer": "Batch gradient descent computes the gradient using the entire training dataset, giving accurate gradient estimates but being very slow and memory-intensive for large datasets. Stochastic gradient descent (SGD) updates weights after each single training example, making it fast but noisy with high variance in updates. Mini-batch gradient descent updates weights after processing a small batch (e.g., 32 or 64 samples), balancing accuracy and speed. It is the standard approach in deep learning, enabling vectorized computation and stable convergence."
+  },
+  {
+    "id": "ai-tech-15",
+    "question": "What is an embedding in machine learning?",
+    "answer": "An embedding is a dense, low-dimensional vector representation of a high-dimensional or categorical input. It maps discrete items like words, users, or products into a continuous vector space where semantically similar items are close together. Word embeddings like Word2Vec and GloVe represent words as vectors where similar words cluster together. Embeddings are learned during training and capture meaningful relationships. They are fundamental to NLP, recommendation systems, and graph neural networks, enabling neural networks to work with categorical data efficiently."
+  },
+  {
+    "id": "ai-tech-16",
+    "question": "What is the difference between boosting and bagging?",
+    "answer": "Bagging (Bootstrap Aggregating) trains multiple models in parallel on random subsets of the data and combines predictions by averaging or voting. It reduces variance and prevents overfitting. Random forest is a bagging algorithm. Boosting trains models sequentially where each model focuses on correcting the errors of the previous one, reducing bias. It can overfit if not regularized. Examples include AdaBoost, XGBoost, and LightGBM. Bagging reduces variance; boosting reduces bias. Boosting generally achieves higher accuracy but is more sensitive to noise."
+  },
+  {
+    "id": "ai-tech-17",
+    "question": "What is reinforcement learning from human feedback (RLHF)?",
+    "answer": "RLHF is a training technique that fine-tunes language models using human preferences. The process has three steps: supervised fine-tuning on demonstration data, training a reward model on human comparisons of model outputs (humans rank which response is better), and using reinforcement learning (typically PPO) to optimize the language model against the reward model. RLHF aligns model outputs with human values and preferences and was central to training models like InstructGPT and ChatGPT to follow instructions helpfully and safely."
+  },
+  {
+    "id": "ai-tech-18",
+    "question": "What is the ROC curve and AUC score?",
+    "answer": "The ROC (Receiver Operating Characteristic) curve plots the True Positive Rate against the False Positive Rate at various classification thresholds. It visualizes the tradeoff between sensitivity and specificity. AUC (Area Under the Curve) summarizes the ROC curve as a single value between 0 and 1. An AUC of 0.5 means random performance; 1.0 means perfect classification. AUC is useful for comparing classifiers and evaluating performance on imbalanced datasets where accuracy alone is misleading."
+  },
+  {
+    "id": "ai-tech-19",
+    "question": "What is feature engineering and why is it important?",
+    "answer": "Feature engineering is the process of using domain knowledge to create, transform, or select input features that improve model performance. It includes techniques like encoding categorical variables, creating interaction features, applying log transforms to skewed data, extracting date components, normalizing or scaling numerical features, and handling missing values. Good feature engineering can significantly boost model accuracy, often more than choosing a more complex algorithm. It bridges raw data and the patterns a model needs to learn."
+  },
+  {
+    "id": "ai-tech-20",
+    "question": "What is the difference between a parametric and non-parametric model?",
+    "answer": "A parametric model has a fixed number of parameters regardless of the training data size. It makes assumptions about the data distribution. Examples include linear regression and logistic regression. A non-parametric model does not assume a fixed form and complexity grows with the data. Examples include K-nearest neighbors, decision trees, and kernel SVMs. Parametric models are faster and require less data but may underfit complex patterns. Non-parametric models are more flexible but require more data and can overfit."
+  },
+  {
+    "id": "fe-tech-11",
+    "question": "What is the difference between == and === in JavaScript?",
+    "answer": "== is the loose equality operator that compares values after type coercion. For example, '5' == 5 is true because the string is coerced to a number. === is the strict equality operator that compares both value and type without coercion. '5' === 5 is false because the types differ. Using === is strongly recommended to avoid unexpected bugs caused by implicit type conversions. The same distinction applies to != and !==."
+  },
+  {
+    "id": "fe-tech-12",
+    "question": "What is the difference between async/await and promises in JavaScript?",
+    "answer": "Promises represent the eventual result of an asynchronous operation and use .then() and .catch() chaining to handle results and errors. Async/await is syntactic sugar built on top of promises that makes asynchronous code look and behave more like synchronous code. An async function always returns a promise, and await pauses execution until the promise resolves. Async/await is generally more readable and easier to debug than promise chains, especially for complex sequential async logic."
+  },
+  {
+    "id": "fe-tech-13",
+    "question": "What is the difference between display none, visibility hidden, and opacity 0 in CSS?",
+    "answer": "display: none removes the element from the document flow entirely — it takes up no space and is not visible. visibility: hidden hides the element but it still occupies its space in the layout. opacity: 0 makes the element fully transparent but it still occupies space and remains interactive (can receive clicks). Use display: none to fully remove an element, visibility: hidden to hide it while preserving layout, and opacity: 0 for fade animations where interaction behavior matters."
+  },
+  {
+    "id": "fe-tech-14",
+    "question": "What is the purpose of the useCallback and useMemo hooks in React?",
+    "answer": "useCallback memoizes a function reference so it is not recreated on every render. It is useful when passing callbacks to child components that rely on reference equality to avoid unnecessary re-renders. useMemo memoizes the result of a computation and recomputes it only when its dependencies change. It is useful for expensive calculations. Both accept a dependency array. Overusing them adds complexity without benefit; they should only be applied when profiling shows a real performance problem."
+  },
+  {
+    "id": "fe-tech-15",
+    "question": "What is a closure in JavaScript? Give an example.",
+    "answer": "A closure is a function that retains access to its outer (enclosing) function's variables even after the outer function has returned. This happens because JavaScript functions capture the scope in which they were defined. For example, a counter function that returns an inner function incrementing a count variable: the inner function closes over the count variable, preserving it between calls. Closures are used for data encapsulation, factory functions, and maintaining state in functional programming patterns."
+  },
+  {
+    "id": "fe-tech-16",
+    "question": "What is the difference between margin and padding in CSS?",
+    "answer": "Padding is the space between an element's content and its border. It is inside the element and inherits the element's background color. Margin is the space outside the element's border, separating it from adjacent elements. Margins can collapse between adjacent vertical elements (margin collapsing), but padding does not collapse. Use padding to add space inside an element and margin to add space between elements. Both can be set on all four sides individually."
+  },
+  {
+    "id": "fe-tech-17",
+    "question": "What is code splitting and how does it improve performance?",
+    "answer": "Code splitting divides a JavaScript bundle into smaller chunks that are loaded on demand rather than sending the entire application code upfront. This reduces the initial bundle size and speeds up the first page load. In React, React.lazy() and dynamic import() enable component-level code splitting. Route-based splitting is the most common pattern, loading code for a route only when the user navigates to it. Bundlers like Webpack and Vite handle the mechanics of splitting and generating separate chunk files."
+  },
+  {
+    "id": "fe-tech-18",
+    "question": "What is the difference between controlled and uncontrolled components in React?",
+    "answer": "A controlled component is one where React controls the form element's value through state. Every change triggers a state update via an onChange handler, making the React state the single source of truth. An uncontrolled component stores its own state internally in the DOM and is accessed via refs. Controlled components offer more control and validation but require more boilerplate. Uncontrolled components are simpler for basic forms. React recommends controlled components for most cases."
+  },
+  {
+    "id": "fe-tech-19",
+    "question": "What is the event loop in JavaScript?",
+    "answer": "The event loop is the mechanism that allows JavaScript's single-threaded runtime to handle asynchronous operations. JavaScript executes code in a call stack. When asynchronous operations like setTimeout or fetch complete, their callbacks are placed in the task queue (or microtask queue for promises). The event loop continuously checks if the call stack is empty and then pushes the next task from the queue onto the stack. Microtasks (promises) are processed before macrotasks (setTimeout) after each task completes."
+  },
+  {
+    "id": "fe-tech-20",
+    "question": "What is a service worker and how does it enable PWAs?",
+    "answer": "A service worker is a JavaScript file that runs in the background separate from the main browser thread, acting as a proxy between the web app and the network. It can intercept network requests, cache responses, and serve cached content when offline. Service workers enable Progressive Web Apps (PWAs) by providing offline functionality, background sync, and push notifications. They have a lifecycle of installation, activation, and fetching. Service workers only work over HTTPS and must be registered by the main application."
+  },
+  {
+    "id": "fs-tech-11",
+    "question": "What is the difference between monorepo and polyrepo?",
+    "answer": "A monorepo stores multiple projects or packages in a single repository. It simplifies code sharing, atomic commits across projects, and consistent tooling but can become complex to manage at scale. A polyrepo uses separate repositories per project, offering independence and simpler per-project CI but making cross-project changes and code sharing harder. Tools like Nx, Turborepo, and Lerna help manage JavaScript monorepos. The right choice depends on team size, project coupling, and organizational structure."
+  },
+  {
+    "id": "fs-tech-12",
+    "question": "What is WebSocket and when would you use it over REST?",
+    "answer": "WebSocket is a protocol providing full-duplex, persistent communication between client and server over a single TCP connection. Unlike REST where the client must poll for updates, WebSocket allows the server to push data to the client in real time. Use WebSocket for real-time features like chat applications, live notifications, collaborative editing, multiplayer games, and live dashboards. REST is better for standard CRUD operations where real-time updates are not required, as REST is simpler, cacheable, and stateless."
+  },
+  {
+    "id": "fs-tech-13",
+    "question": "How do you implement role-based access control (RBAC) in a full stack app?",
+    "answer": "RBAC assigns permissions to roles and roles to users. In the database, store user roles (admin, editor, viewer) on the user model. On the backend, create authorization middleware that checks the user's role from the JWT or session before allowing access to protected routes. For example, only admin roles can access DELETE endpoints. On the frontend, conditionally render UI elements based on the user's role. Use a centralized permissions config to avoid scattering role checks throughout the codebase."
+  },
+  {
+    "id": "fs-tech-14",
+    "question": "What is the difference between SQL joins: INNER, LEFT, RIGHT, and FULL OUTER?",
+    "answer": "INNER JOIN returns only rows with matching values in both tables. LEFT JOIN returns all rows from the left table and matched rows from the right; unmatched right rows are NULL. RIGHT JOIN returns all rows from the right table and matched rows from the left; unmatched left rows are NULL. FULL OUTER JOIN returns all rows from both tables, with NULLs where there is no match on either side. INNER JOIN is the most common; LEFT JOIN is used when you want all records from the primary table regardless of matches."
+  },
+  {
+    "id": "fs-tech-15",
+    "question": "How would you implement real-time features in a full stack application?",
+    "answer": "Options for real-time features include WebSockets (persistent bidirectional connection via Socket.io), Server-Sent Events (SSE) for one-way server-to-client streaming, and long polling as a fallback. For a chat app, WebSockets are ideal. For live notifications, SSE or WebSockets work. The backend emits events when data changes; the frontend listens and updates the UI. At scale, use a pub/sub system like Redis to broadcast events across multiple server instances so all connected clients receive updates regardless of which server they are connected to."
+  },
+  {
+    "id": "fs-tech-16",
+    "question": "What is middleware in Express.js and how does it work?",
+    "answer": "Middleware in Express.js are functions that have access to the request, response, and next function in the request-response cycle. They run sequentially for each incoming request. Middleware can execute code, modify request or response objects, end the request cycle, or call next() to pass control to the next middleware. Common uses include logging, authentication, input validation, error handling, and parsing request bodies. Middleware can be applied globally to all routes or scoped to specific routes."
+  },
+  {
+    "id": "fs-tech-17",
+    "question": "What is the difference between cookies and JWT for session management?",
+    "answer": "Cookie-based sessions store a session ID in a cookie; the actual session data is stored server-side. The server must look up session data on each request, making it stateful. JWT stores all session data in the token itself, signed for verification. The server verifies the token without a database lookup, making it stateless and scalable. JWTs are better for distributed systems but cannot be easily invalidated before expiry. Cookies with server-side sessions are easier to invalidate (just delete the session) and are more secure against token theft when using HttpOnly cookies."
+  },
+  {
+    "id": "fs-tech-18",
+    "question": "What is database seeding and when would you use it?",
+    "answer": "Database seeding is the process of populating a database with initial or sample data, typically done during development, testing, or initial deployment. Seed data might include default admin users, lookup tables, or sample content for testing. Most ORM frameworks like Prisma, Sequelize, and Django provide built-in seeding mechanisms. Seeding ensures developers work with a consistent data set, tests run against predictable data, and newly deployed environments start with required default records."
+  },
+  {
+    "id": "fs-tech-19",
+    "question": "What is the N+1 query problem and how do you fix it?",
+    "answer": "The N+1 problem occurs when an application makes one query to fetch a list of N records, then makes N additional queries to fetch related data for each record individually. For example, fetching 100 users and then querying each user's posts separately results in 101 queries. Fix it by using JOIN queries, eager loading via ORM (Prisma's include, Sequelize's eager loading), or DataLoader for batching in GraphQL. Always monitor query counts during development using query logging to detect N+1 problems early."
+  },
+  {
+    "id": "fs-tech-20",
+    "question": "What is the difference between a hard delete and a soft delete in a database?",
+    "answer": "A hard delete permanently removes a record from the database with a DELETE statement. The data is gone and cannot be recovered without backups. A soft delete marks a record as deleted (typically with a deleted_at timestamp or an is_deleted flag) without removing it from the database. The record is excluded from normal queries but can be restored or audited. Soft deletes are preferred when data history, audit trails, or recovery are important, at the cost of additional query complexity to filter deleted records."
+  },
+  {
+    "id": "devops-tech-11",
+    "question": "What is Helm and how is it used in Kubernetes?",
+    "answer": "Helm is a package manager for Kubernetes that simplifies deploying and managing applications as reusable, versioned packages called charts. A Helm chart is a collection of YAML templates that define Kubernetes resources. Helm allows parameterizing deployments with values files, enabling the same chart to be deployed with different configurations across environments. It supports versioning and rollbacks of releases. Helm simplifies complex deployments that would otherwise require managing many raw Kubernetes manifests manually."
+  },
+  {
+    "id": "devops-tech-12",
+    "question": "What is the difference between a stateful and stateless application in DevOps?",
+    "answer": "A stateless application does not store any client-specific data between requests. Each request is independent and can be handled by any server instance, making horizontal scaling straightforward. Examples include REST APIs. A stateful application maintains data about client sessions or state between requests, requiring requests to be routed to the same instance or shared state stored externally (like in Redis or a database). Stateless apps are easier to scale and deploy; stateful apps require careful orchestration for persistence and failover."
+  },
+  {
+    "id": "devops-tech-13",
+    "question": "What is GitOps and how does it work?",
+    "answer": "GitOps is a DevOps practice that uses Git as the single source of truth for infrastructure and application configuration. The desired state of the system is declared in a Git repository. An automated operator (like ArgoCD or Flux) continuously monitors the repository and reconciles the actual cluster state to match the declared state. Changes are made via pull requests, providing versioning, audit trails, and easy rollbacks. GitOps brings software development practices like code review and version control to infrastructure management."
+  },
+  {
+    "id": "devops-tech-14",
+    "question": "What is the difference between a Dockerfile CMD and ENTRYPOINT?",
+    "answer": "ENTRYPOINT defines the main command that always runs when the container starts. It sets the container's primary process. CMD provides default arguments to the ENTRYPOINT or, if no ENTRYPOINT is set, the default command to run. CMD can be overridden at runtime when running the container. ENTRYPOINT cannot be easily overridden without the --entrypoint flag. A common pattern is using ENTRYPOINT for the executable and CMD for default arguments, allowing users to pass different arguments without changing the entrypoint."
+  },
+  {
+    "id": "devops-tech-15",
+    "question": "What is a Kubernetes ConfigMap and Secret and when would you use each?",
+    "answer": "A ConfigMap stores non-sensitive configuration data as key-value pairs, such as environment variables, configuration files, or command-line arguments. It decouples configuration from container images. A Secret stores sensitive data like passwords, API keys, and tokens, base64-encoded and with access controls. Use ConfigMap for general application configuration and Secret for credentials. Secrets can be mounted as volumes or injected as environment variables. In production, integrate Secrets with external secret managers like AWS Secrets Manager or HashiCorp Vault for better security."
+  },
+  {
+    "id": "devops-tech-16",
+    "question": "What is canary deployment and how does it differ from blue-green?",
+    "answer": "Canary deployment gradually rolls out a new version to a small subset of users (e.g., 5%) while the rest use the old version. If metrics look healthy, the rollout percentage increases until fully deployed. It minimizes risk by limiting the blast radius of issues. Blue-green deployment switches all traffic at once from one environment to another. Canary is better for gradual risk mitigation and real-world testing with production traffic. Blue-green offers instant rollback but exposes all users to the new version at once."
+  },
+  {
+    "id": "devops-tech-17",
+    "question": "What is the purpose of a reverse proxy and how does it differ from a forward proxy?",
+    "answer": "A reverse proxy sits in front of backend servers and forwards client requests to them. Clients interact with the proxy without knowing the actual backend. It provides load balancing, SSL termination, caching, and security. Examples: Nginx, HAProxy. A forward proxy sits in front of clients and forwards their requests to the internet on their behalf, providing anonymity, content filtering, and caching for outbound traffic. The key difference: reverse proxy protects and manages servers; forward proxy manages and filters client outbound traffic."
+  },
+  {
+    "id": "devops-tech-18",
+    "question": "What is log aggregation and why is it important in distributed systems?",
+    "answer": "Log aggregation collects logs from multiple services, servers, and containers into a centralized system for unified searching, analysis, and alerting. In distributed systems, logs are scattered across many instances, making debugging impossible without aggregation. Tools like the ELK Stack (Elasticsearch, Logstash, Kibana), Fluentd, and Grafana Loki collect, parse, index, and visualize logs. Centralized logs enable faster incident response, pattern detection, compliance auditing, and correlation of events across services."
+  },
+  {
+    "id": "devops-tech-19",
+    "question": "What is the difference between vertical pod autoscaling and horizontal pod autoscaling in Kubernetes?",
+    "answer": "Horizontal Pod Autoscaling (HPA) increases or decreases the number of pod replicas based on metrics like CPU or memory usage, distributing load across more instances. Vertical Pod Autoscaling (VPA) adjusts the CPU and memory resource requests and limits of individual pods rather than changing the number of pods. HPA is better for stateless applications that can scale out easily. VPA is better for applications that cannot be easily replicated but need more resources per instance. Both can be used together in some scenarios."
+  },
+  {
+    "id": "devops-tech-20",
+    "question": "What is a service mesh and what problem does it solve?",
+    "answer": "A service mesh is a dedicated infrastructure layer for managing service-to-service communication in microservices architectures. It handles cross-cutting concerns like load balancing, service discovery, authentication, encryption (mTLS), retries, circuit breaking, and observability without requiring changes to application code. It works by injecting a sidecar proxy (like Envoy) alongside each service. Examples include Istio and Linkerd. Service meshes solve the problem of duplicating networking logic across dozens of microservices, centralizing it in the infrastructure layer."
+  },
+  {
+    "id": "ds-tech-11",
+    "question": "What is the difference between a type I and type II error in hypothesis testing?",
+    "answer": "A Type I error (false positive) occurs when you reject a true null hypothesis — concluding there is an effect when there is none. The probability of a Type I error is the significance level alpha (e.g., 0.05). A Type II error (false negative) occurs when you fail to reject a false null hypothesis — missing a real effect. The probability of a Type II error is beta, and statistical power is 1 - beta. In practice, reducing one type of error increases the other; the acceptable tradeoff depends on the consequences of each error type."
+  },
+  {
+    "id": "ds-tech-12",
+    "question": "What is the difference between parametric and non-parametric statistical tests?",
+    "answer": "Parametric tests assume the data follows a specific distribution, usually normal, and use parameters like mean and standard deviation. Examples include t-tests and ANOVA. They are more powerful when assumptions are met. Non-parametric tests make no assumptions about the data distribution and work on ranks or signs. Examples include Mann-Whitney U and Kruskal-Wallis tests. Use non-parametric tests when data is ordinal, heavily skewed, has small sample sizes, or violates normality assumptions."
+  },
+  {
+    "id": "ds-tech-13",
+    "question": "What is SMOTE and when would you use it?",
+    "answer": "SMOTE (Synthetic Minority Oversampling Technique) addresses class imbalance by generating synthetic samples for the minority class rather than simply duplicating existing ones. It works by selecting a minority class sample, finding its k nearest neighbors, and creating new synthetic points along the line segments between them. Use SMOTE when you have a highly imbalanced dataset where the minority class is underrepresented, such as fraud detection or rare disease classification. It helps models learn the minority class better without overfitting to duplicated examples."
+  },
+  {
+    "id": "ds-tech-14",
+    "question": "What is the difference between K-means and hierarchical clustering?",
+    "answer": "K-means partitions data into a predefined number of K clusters by iteratively assigning points to the nearest centroid and updating centroids. It is fast and scalable but requires specifying K and is sensitive to initialization and outliers. Hierarchical clustering builds a tree of clusters (dendrogram) by either merging (agglomerative) or splitting (divisive) clusters. It does not require specifying the number of clusters upfront and reveals cluster structure at multiple scales, but is computationally expensive for large datasets."
+  },
+  {
+    "id": "ds-tech-15",
+    "question": "What is feature importance and how do you calculate it?",
+    "answer": "Feature importance measures how much each feature contributes to a model's predictions. In tree-based models like random forests and XGBoost, it is calculated by measuring how much each feature reduces impurity (like Gini or entropy) across all splits. Permutation importance measures the drop in model performance when a feature's values are randomly shuffled. SHAP (SHapley Additive exPlanations) values provide a theoretically grounded, consistent measure of each feature's contribution to individual predictions. Feature importance guides feature selection and model interpretation."
+  },
+  {
+    "id": "ds-tech-16",
+    "question": "What is the curse of dimensionality?",
+    "answer": "The curse of dimensionality refers to problems that arise when working with high-dimensional data. As dimensions increase, the volume of space grows exponentially, making data increasingly sparse. Distance metrics become less meaningful because all points appear roughly equidistant. Models require exponentially more data to generalize well, and computational costs increase. It affects algorithms like K-nearest neighbors and clustering that rely on distance. Solutions include dimensionality reduction (PCA, t-SNE), feature selection, and regularization techniques."
+  },
+  {
+    "id": "ds-tech-17",
+    "question": "What is the difference between MAE and RMSE as error metrics?",
+    "answer": "MAE (Mean Absolute Error) is the average of absolute differences between predictions and actual values. It treats all errors equally and is robust to outliers. RMSE (Root Mean Squared Error) is the square root of the average squared differences. Squaring penalizes larger errors more heavily, making RMSE more sensitive to outliers. Use MAE when all errors are equally important or outliers should not dominate. Use RMSE when large errors are particularly undesirable and should be penalized more."
+  },
+  {
+    "id": "ds-tech-18",
+    "question": "What is Bayesian inference and how does it differ from frequentist inference?",
+    "answer": "Bayesian inference updates beliefs about a parameter using prior knowledge and observed data via Bayes' theorem, producing a posterior probability distribution. It treats parameters as random variables with distributions. Frequentist inference treats parameters as fixed unknown values and uses data to estimate them through methods like maximum likelihood estimation and confidence intervals based on hypothetical repeated sampling. Bayesian methods naturally incorporate prior knowledge and uncertainty but can be computationally intensive. Frequentist methods are simpler and widely used in classical statistics."
+  },
+  {
+    "id": "ds-tech-19",
+    "question": "What is time series forecasting and what are common techniques?",
+    "answer": "Time series forecasting predicts future values based on historical observations ordered in time. Common techniques include: ARIMA (Autoregressive Integrated Moving Average) for stationary series, SARIMA for seasonal patterns, Exponential Smoothing (ETS) for trend and seasonality, Facebook Prophet for business time series with seasonality and holidays, LSTM networks for capturing complex nonlinear temporal patterns, and XGBoost with lag features for tabular time series. Proper forecasting requires handling trends, seasonality, stationarity, and choosing appropriate evaluation metrics like MAPE or RMSE on a holdout period."
+  },
+  {
+    "id": "ds-tech-20",
+    "question": "What is the difference between a decision tree and a neural network?",
+    "answer": "A decision tree splits data into branches based on feature thresholds, producing a tree of if-then rules. It is interpretable, handles mixed data types, requires no feature scaling, and works well for tabular data. A neural network learns complex nonlinear representations through multiple layers of weighted connections and activation functions. It excels at unstructured data like images, text, and audio but requires more data, computation, and tuning, and is harder to interpret. Decision trees are preferred for interpretability; neural networks for complex pattern recognition."
+  },
+  {
+    "id": "de-tech-11",
+    "question": "What is dbt (data build tool) and how is it used in data engineering?",
+    "answer": "dbt is a transformation framework that allows data engineers and analysts to write SQL-based transformations as modular, version-controlled models. It sits in the Transform step of the ELT process, running inside the data warehouse. dbt compiles SQL models, manages dependencies between them, runs tests on data quality, generates documentation, and handles incremental models. It enables software engineering best practices like version control, testing, and CI/CD for data transformations, making data pipelines more maintainable and collaborative."
+  },
+  {
+    "id": "de-tech-12",
+    "question": "What is the difference between OLTP and OLAP systems?",
+    "answer": "OLTP (Online Transaction Processing) systems handle high volumes of short, transactional queries like inserts, updates, and deletes. They are optimized for write performance and data integrity, using row-oriented storage. Examples: PostgreSQL, MySQL. OLAP (Online Analytical Processing) systems handle complex analytical queries aggregating large amounts of historical data. They are optimized for read performance using columnar storage and are the foundation of data warehouses. Examples: BigQuery, Redshift. OLTP serves operational applications; OLAP serves business intelligence and reporting."
+  },
+  {
+    "id": "de-tech-13",
+    "question": "What is a slowly changing dimension (SCD) in data warehousing?",
+    "answer": "A slowly changing dimension tracks how dimension attributes change over time in a data warehouse. Type 1 SCD overwrites old values with new ones, losing history. Type 2 SCD adds a new row for each change with effective dates and a current flag, preserving full history but growing the table. Type 3 SCD adds a new column for the previous value, tracking only one change. Type 2 is most common when full historical analysis is needed, such as tracking customer address changes and analyzing sales by historical location."
+  },
+  {
+    "id": "de-tech-14",
+    "question": "What is data serialization and what formats are commonly used in pipelines?",
+    "answer": "Data serialization is the process of converting data structures into a format that can be stored or transmitted and reconstructed later. Common formats in data pipelines include: JSON (human-readable, widely used for APIs), CSV (simple tabular format), Avro (compact binary format with schema, popular in Kafka), Parquet (columnar binary format optimized for analytics), and ORC (similar to Parquet, used in Hadoop). Binary formats like Avro and Parquet are preferred in large-scale pipelines for efficiency, compression, and schema evolution support."
+  },
+  {
+    "id": "de-tech-15",
+    "question": "What is Apache Airflow and how does it manage data pipelines?",
+    "answer": "Apache Airflow is an open-source workflow orchestration platform for authoring, scheduling, and monitoring data pipelines. Pipelines are defined as DAGs (Directed Acyclic Graphs) in Python code, where each node is a task and edges define dependencies. Airflow's scheduler triggers DAGs on a schedule or external event, tracks task state, handles retries, and provides a web UI for monitoring. It integrates with databases, cloud services, and Spark. Airflow is widely used for orchestrating ETL pipelines, ML workflows, and data engineering tasks."
+  },
+  {
+    "id": "de-tech-16",
+    "question": "What is the difference between a fact table and a dimension table?",
+    "answer": "A fact table stores quantitative, measurable data (facts) about business events, such as sales amounts, quantities, or click counts, along with foreign keys to dimension tables. It is typically large and grows continuously. A dimension table stores descriptive context about the facts, such as customer names, product details, dates, or store locations. Dimension tables are smaller and change less frequently. Together they form a star or snowflake schema that enables efficient slicing and dicing of facts by dimensional attributes in analytical queries."
+  },
+  {
+    "id": "de-tech-17",
+    "question": "What is data skew in distributed computing and how do you handle it?",
+    "answer": "Data skew occurs when data is unevenly distributed across partitions in a distributed system, causing some nodes to process significantly more data than others, creating bottlenecks and slowing the overall job. In Spark, skew often occurs during joins or group-by operations on columns with highly imbalanced key distributions. Solutions include salting keys by appending a random suffix to distribute load, splitting skewed keys into separate processing paths, broadcasting small tables to avoid shuffles, or repartitioning data more evenly before operations."
+  },
+  {
+    "id": "de-tech-18",
+    "question": "What is the role of a metadata store in a data platform?",
+    "answer": "A metadata store catalogs information about data assets in a platform, including schema definitions, data lineage, ownership, quality metrics, and usage statistics. It acts as a central registry that helps teams discover, understand, and trust data. Technical metadata includes column types and table schemas; business metadata includes descriptions and ownership. Tools like Apache Atlas, DataHub, and Amundsen provide metadata management. A metadata store is essential for data governance, enabling compliance, impact analysis, and self-service data discovery across large organizations."
+  },
+  {
+    "id": "de-tech-19",
+    "question": "What is the difference between Parquet and CSV file formats?",
+    "answer": "CSV is a simple text-based row format where each row is a line and values are separated by commas. It is human-readable and universally supported but lacks type information, compression, and is slow to query for analytical workloads. Parquet is a binary columnar storage format that stores data by column rather than row, enabling efficient compression, predicate pushdown, and reading only the columns needed for a query. Parquet is significantly faster and smaller for analytical queries. It is the preferred format for large-scale data pipelines and data lake storage."
+  },
+  {
+    "id": "de-tech-20",
+    "question": "What is change data capture (CDC) and how is it used in pipelines?",
+    "answer": "Change data capture is a technique for tracking and capturing changes (inserts, updates, deletes) made to a source database in real time or near real time, and propagating them to downstream systems. It is used to keep data warehouses, search indexes, and caches in sync with operational databases without full table scans. CDC can work via database transaction logs (like Postgres WAL or MySQL binlog), triggers, or timestamps. Tools like Debezium capture changes and stream them to Kafka for downstream consumption in data pipelines."
+  },
+  {
+    "id": "mob-tech-11",
+    "question": "What is the difference between deep linking and universal linking in mobile apps?",
+    "answer": "Deep linking uses custom URL schemes (e.g., myapp://screen/detail) to open a specific screen in an app. If the app is not installed, the link fails. Universal linking (iOS) and App Links (Android) use standard HTTPS URLs that open the app if installed or fall back to the website if not. Universal links are more reliable, harder to hijack, and provide a better user experience. They require hosting a verification file (apple-app-site-association or assetlinks.json) on the web domain to prove ownership."
+  },
+  {
+    "id": "mob-tech-12",
+    "question": "How do you handle offline support in a mobile application?",
+    "answer": "Offline support involves storing data locally when the device has no connection and syncing when connectivity is restored. Strategies include using local databases (SQLite, Realm, or WatermelonDB) to cache data, detecting network status with NetInfo in React Native, queuing user actions locally and replaying them when online, implementing optimistic UI updates that assume success and reconcile later, and using background sync to periodically sync data. Design for conflict resolution when the same data is modified both locally and on the server while offline."
+  },
+  {
+    "id": "mob-tech-13",
+    "question": "What is the difference between hot reload and hot restart in Flutter?",
+    "answer": "Hot reload injects updated source code into the running Dart VM without losing the current app state. It reflects UI changes almost instantly, preserving the current screen and widget tree state. It is ideal for iterating on UI changes. Hot restart fully restarts the app and the Dart VM, resetting all state to initial values. It is needed when making changes to app initialization code, main functions, or global state that hot reload cannot update. Hot reload is faster; hot restart is more thorough."
+  },
+  {
+    "id": "mob-tech-14",
+    "question": "What is the purpose of the useRef hook in React Native?",
+    "answer": "useRef creates a mutable reference object that persists across renders without causing re-renders when its value changes. In React Native, it is commonly used to hold references to native components to call imperative methods on them directly, such as focusing a TextInput, scrolling a ScrollView, or playing a video. It is also used to store mutable values that should not trigger re-renders, like timers or previous state values. Unlike useState, updating a ref does not cause the component to re-render."
+  },
+  {
+    "id": "mob-tech-15",
+    "question": "How do you implement biometric authentication in a mobile app?",
+    "answer": "Biometric authentication uses fingerprint or face recognition to verify users. In React Native, libraries like react-native-biometrics or Expo LocalAuthentication provide cross-platform biometric APIs. The flow involves checking device biometric availability, prompting the user to authenticate, and using the result to grant access or decrypt stored credentials. Biometrics should complement, not replace, server-side authentication. Sensitive keys authenticated via biometrics can be stored in the device's secure enclave (iOS Keychain, Android Keystore) for hardware-backed security."
+  },
+  {
+    "id": "mob-tech-16",
+    "question": "What is the difference between React Native's FlatList and ScrollView?",
+    "answer": "ScrollView renders all its children at once inside a scrollable container. It is simple but causes performance issues with large lists because all items are mounted regardless of visibility. FlatList renders only the items currently visible on screen (lazy rendering / windowing) and recycles item components as you scroll. It requires a data array and renderItem function and is highly optimized for large lists. Use ScrollView for small, static content; use FlatList for any dynamic list with potentially many items."
+  },
+  {
+    "id": "mob-tech-17",
+    "question": "What is code push and how does it enable over-the-air updates in React Native?",
+    "answer": "CodePush (by Microsoft App Center) is a cloud service that allows React Native apps to receive JavaScript bundle updates directly from the server without going through the app store review process. Since React Native apps separate the JavaScript bundle from native code, the JS bundle can be updated independently. The app checks for updates on launch, downloads new bundles in the background, and applies them on the next launch. CodePush enables rapid bug fixes and feature rollouts but cannot update native code, which still requires a full app store release."
+  },
+  {
+    "id": "mob-tech-18",
+    "question": "How do you secure sensitive data stored on a mobile device?",
+    "answer": "Use the platform's secure storage: iOS Keychain and Android Keystore for storing sensitive values like tokens, passwords, and keys. Libraries like react-native-keychain abstract both. Never store sensitive data in AsyncStorage or plaintext files. Enable certificate pinning to prevent MITM attacks on API calls. Use biometric authentication to gate access to sensitive features. Enable app transport security (ATS on iOS) to enforce HTTPS. Obfuscate the JavaScript bundle to make reverse engineering harder. Implement jailbreak and root detection for high-security apps."
+  },
+  {
+    "id": "mob-tech-19",
+    "question": "What is the difference between portrait and landscape orientation handling in mobile apps?",
+    "answer": "Portrait orientation has the device taller than wide; landscape is wider than tall. By default, apps may support one or both. In React Native, the Dimensions API or useWindowDimensions hook provides current screen dimensions and updates when orientation changes. Responsive layouts using Flexbox can adapt automatically. The react-native-orientation-locker library allows locking or detecting orientation changes programmatically. Some screens like video players benefit from landscape, while most app flows are designed for portrait. Handling orientation requires testing layouts in both modes."
+  },
+  {
+    "id": "mob-tech-20",
+    "question": "What is Dart's null safety feature in Flutter?",
+    "answer": "Null safety in Dart (introduced in Dart 2.12) makes nullability part of the type system, eliminating null reference errors at runtime by catching them at compile time. By default, variables cannot be null unless explicitly declared as nullable with a ? suffix (e.g., String? name). The compiler enforces null checks before using nullable values. The late keyword declares non-nullable variables initialized after declaration. Null safety eliminates an entire class of bugs and improves code reliability. Flutter projects migrated to sound null safety gain performance benefits as well."
+  },
+  {
+    "id": "cloud-tech-11",
+    "question": "What is the difference between AWS S3 and AWS EFS?",
+    "answer": "AWS S3 is object storage accessed via HTTP APIs, ideal for storing unstructured data like images, backups, and static assets. It scales infinitely and is accessed programmatically, not as a mounted filesystem. AWS EFS (Elastic File System) is a managed NFS (Network File System) that can be mounted on multiple EC2 instances simultaneously, providing shared file system access. Use S3 for storing files accessed via API and EFS when multiple compute instances need concurrent read/write access to shared files, like shared application data or content management systems."
+  },
+  {
+    "id": "cloud-tech-12",
+    "question": "What is cloud cost optimization and what strategies do you use?",
+    "answer": "Cloud cost optimization reduces unnecessary spending while maintaining performance. Strategies include rightsizing instances to match actual workload needs, using reserved instances or savings plans for predictable workloads (up to 70% savings), using spot or preemptible instances for fault-tolerant batch jobs, setting auto-scaling to scale down during low usage, deleting unused resources (idle instances, old snapshots, unattached volumes), using cost monitoring tools like AWS Cost Explorer, implementing tagging for cost allocation, and moving infrequently accessed data to cheaper storage tiers."
+  },
+  {
+    "id": "cloud-tech-13",
+    "question": "What is a cloud-native application?",
+    "answer": "A cloud-native application is designed specifically to leverage cloud computing capabilities, built using principles like microservices architecture, containerization (Docker), orchestration (Kubernetes), declarative APIs, and DevOps practices. Cloud-native apps are horizontally scalable, resilient to failures, observable, and continuously delivered. They use managed cloud services instead of self-managed dependencies and are designed for the dynamic, distributed nature of cloud environments. The Cloud Native Computing Foundation (CNCF) promotes cloud-native standards and projects."
+  },
+  {
+    "id": "cloud-tech-14",
+    "question": "What is the difference between a public cloud, private cloud, and hybrid cloud?",
+    "answer": "A public cloud is owned and operated by a third-party provider (AWS, Azure, GCP) and shared among multiple customers. It offers scalability and lower upfront costs. A private cloud is dedicated infrastructure for a single organization, hosted on-premises or by a provider, offering more control and security for sensitive workloads. A hybrid cloud combines both, allowing workloads to move between private and public clouds based on requirements. Organizations use hybrid cloud for regulatory compliance, data sovereignty, and bursting to the public cloud during peak demand."
+  },
+  {
+    "id": "cloud-tech-15",
+    "question": "What is IAM (Identity and Access Management) in cloud platforms?",
+    "answer": "IAM is a framework for managing who can access cloud resources and what actions they can perform. It involves users (individuals), groups (collections of users), roles (sets of permissions assumable by services or users), and policies (JSON documents defining allowed or denied actions on resources). IAM follows the principle of least privilege. In AWS, IAM policies are attached to identities or resources. Best practices include using roles instead of long-lived credentials, enabling MFA for sensitive accounts, and regularly auditing permissions."
+  },
+  {
+    "id": "cloud-tech-16",
+    "question": "What is a cloud gateway and what role does it play in architecture?",
+    "answer": "A cloud gateway (or API gateway) is a managed service that acts as the single entry point for client requests to backend services. It handles routing, authentication, rate limiting, SSL termination, request transformation, and logging. Examples include AWS API Gateway and Kong. In microservices architectures, an API gateway prevents clients from directly calling individual services, simplifying client logic and centralizing cross-cutting concerns. It can also handle protocol translation, such as converting REST to gRPC."
+  },
+  {
+    "id": "cloud-tech-17",
+    "question": "What is disaster recovery in cloud and what is RTO vs RPO?",
+    "answer": "Disaster recovery (DR) is the strategy for restoring systems and data after a catastrophic failure. RTO (Recovery Time Objective) is the maximum acceptable time to restore services after a disaster — how long the business can tolerate downtime. RPO (Recovery Point Objective) is the maximum acceptable data loss measured in time — how old the restored data can be. Lower RTO and RPO require more redundant, real-time architectures (like multi-region active-active) which cost more. Higher tolerances allow simpler, cheaper strategies like backup and restore."
+  },
+  {
+    "id": "cloud-tech-18",
+    "question": "What is the difference between a NAT gateway and an internet gateway in AWS?",
+    "answer": "An internet gateway enables resources in a public subnet to communicate directly with the internet in both directions. It allows inbound traffic from the internet and outbound traffic to the internet. A NAT gateway allows resources in a private subnet to initiate outbound connections to the internet (e.g., for software updates) without allowing inbound connections from the internet. Private subnets use a NAT gateway to keep resources inaccessible from the internet while still allowing outbound access."
+  },
+  {
+    "id": "cloud-tech-19",
+    "question": "What is a cloud security group and how does it work?",
+    "answer": "A security group is a virtual firewall that controls inbound and outbound network traffic to cloud resources like EC2 instances or RDS databases. Rules specify allowed protocols, ports, and source or destination IP ranges. Security groups are stateful: if you allow inbound traffic, the response is automatically allowed outbound. They default to deny all inbound and allow all outbound. Multiple security groups can be assigned to a resource. They are the primary network-level access control for resources within a VPC."
+  },
+  {
+    "id": "cloud-tech-20",
+    "question": "What is FinOps and why is it important in cloud environments?",
+    "answer": "FinOps (Financial Operations) is a cultural practice and framework that brings together engineering, finance, and business teams to collaboratively manage cloud spending. It aims to maximize the business value of cloud investments by providing visibility into costs, promoting accountability, and enabling informed tradeoffs between speed, cost, and quality. Key practices include tagging resources for cost allocation, setting budgets and alerts, rightsizing, using commitment-based discounts, and building a culture where engineers understand and own the cost implications of their architectural decisions."
+  },
+  {
+    "id": "cyber-tech-11",
+    "question": "What is cross-site scripting (XSS) and how do you prevent it?",
+    "answer": "XSS is an attack where malicious scripts are injected into web pages viewed by other users, allowing attackers to steal cookies, session tokens, or perform actions on behalf of users. Stored XSS persists in the database; reflected XSS is in the URL. Prevention includes escaping and encoding all user-supplied output in HTML, using Content Security Policy (CSP) headers to restrict script sources, validating and sanitizing inputs, using modern frameworks that auto-escape output (React, Angular), and setting HttpOnly on cookies to prevent JavaScript access."
+  },
+  {
+    "id": "cyber-tech-12",
+    "question": "What is the difference between black box, white box, and grey box testing in security?",
+    "answer": "Black box testing gives the tester no prior knowledge of the target system, simulating an external attacker's perspective. The tester must discover information through reconnaissance. White box testing gives full access to source code, architecture, and documentation, enabling thorough review of all code paths. Grey box testing provides partial knowledge, such as credentials or some documentation, simulating an insider threat or a compromised account. Each approach has different coverage and realism tradeoffs for identifying security vulnerabilities."
+  },
+  {
+    "id": "cyber-tech-13",
+    "question": "What is multi-factor authentication and why is it important?",
+    "answer": "Multi-factor authentication (MFA) requires users to provide two or more verification factors to authenticate, combining something they know (password), something they have (phone, hardware token), and something they are (biometric). Even if a password is compromised, an attacker still needs the second factor. MFA significantly reduces the risk of account takeover from phishing, credential stuffing, and brute force attacks. TOTP apps, SMS codes, hardware keys (YubiKey), and push notifications are common second factors."
+  },
+  {
+    "id": "cyber-tech-14",
+    "question": "What is a firewall and what are the different types?",
+    "answer": "A firewall monitors and controls network traffic based on security rules. Types include: packet filtering firewalls (inspect headers, fast but limited), stateful inspection firewalls (track connection state for context-aware filtering), application layer firewalls (inspect payload content at Layer 7, detect application-specific attacks), next-generation firewalls (NGFW, combine stateful inspection with deep packet inspection, intrusion prevention, and application awareness), and web application firewalls (WAF, specifically protect web applications from HTTP attacks like XSS and SQL injection)."
+  },
+  {
+    "id": "cyber-tech-15",
+    "question": "What is social engineering in cybersecurity? Give examples.",
+    "answer": "Social engineering manipulates people into divulging confidential information or taking actions that compromise security, exploiting human psychology rather than technical vulnerabilities. Examples include phishing (fraudulent emails impersonating trusted entities to steal credentials), spear phishing (targeted phishing against specific individuals), vishing (voice phishing via phone calls), pretexting (fabricating a scenario to extract information), baiting (leaving infected USB drives), and tailgating (following an authorized person into a restricted area). Security awareness training is the primary defense."
+  },
+  {
+    "id": "cyber-tech-16",
+    "question": "What is the difference between IDS and IPS?",
+    "answer": "An IDS (Intrusion Detection System) monitors network traffic or system activity for suspicious patterns and alerts administrators when potential threats are detected. It is passive and does not block traffic. An IPS (Intrusion Prevention System) actively monitors and can automatically block or drop malicious traffic in real time, sitting inline in the network path. IDS is useful for monitoring and forensics; IPS provides active protection but risks blocking legitimate traffic if misconfigured (false positives). Modern NGFW products combine both capabilities."
+  },
+  {
+    "id": "cyber-tech-17",
+    "question": "What is a buffer overflow attack and how is it prevented?",
+    "answer": "A buffer overflow occurs when a program writes more data to a buffer than it can hold, overwriting adjacent memory. Attackers exploit this to overwrite return addresses and redirect execution to malicious code (shellcode). Prevention techniques include input validation and bounds checking, using memory-safe languages like Rust or Go, enabling compiler protections like stack canaries (detect overwrites), Address Space Layout Randomization (ASLR) to randomize memory layout, Data Execution Prevention (DEP/NX) to mark memory as non-executable, and using safe string functions."
+  },
+  {
+    "id": "cyber-tech-18",
+    "question": "What is the difference between hashing and encryption?",
+    "answer": "Hashing is a one-way function that converts data into a fixed-size digest. It cannot be reversed to obtain the original data. It is used for storing passwords (bcrypt, Argon2), verifying data integrity (SHA-256), and digital signatures. Encryption is a two-way process that transforms data into ciphertext using a key and can be reversed with the correct key to recover the original data. Use hashing when you only need to verify data without recovering it; use encryption when you need to protect data that must be retrieved later."
+  },
+  {
+    "id": "cyber-tech-19",
+    "question": "What is a PKI (Public Key Infrastructure) and how does it work?",
+    "answer": "PKI is a system for managing digital certificates and public-private key pairs that enables secure communication and authentication. A Certificate Authority (CA) issues digital certificates that bind a public key to an identity. When a client connects to a server, the server presents its certificate. The client verifies it against trusted CAs in its trust store. This ensures the server is who it claims to be. PKI underpins HTTPS, email signing, code signing, and VPN authentication. Private CAs are used within organizations for internal services."
+  },
+  {
+    "id": "cyber-tech-20",
+    "question": "What is threat modeling and how is it used in secure software development?",
+    "answer": "Threat modeling is a structured process for identifying, analyzing, and mitigating security threats to a system during the design phase, before code is written. Common frameworks include STRIDE (Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege) and PASTA. The process involves drawing data flow diagrams, identifying assets and trust boundaries, enumerating threats for each component, assessing risk, and defining mitigations. Threat modeling shifts security left, catching architectural vulnerabilities early when they are cheapest to fix."
+  }
+]
