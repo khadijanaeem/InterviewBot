@@ -263,65 +263,6 @@ def get_question_by_difficulty(difficulty, category="technical"):
     selected = random.choice(questions)
     return selected["text"]
 
-# def record_answer(max_duration=60, silence_threshold=1.5):
-#     print("🎙 Listening... (speak now)")
-
-#     frame_duration = 30  # ms
-#     frame_size = int(sample_rate * frame_duration / 1000)
-
-#     silence_limit = int(silence_threshold * 1000 / frame_duration)
-
-#     silence_counter = 0
-#     audio_frames = []
-
-#     stream = sd.InputStream(
-#         samplerate=sample_rate,
-#         channels=1,
-#         dtype="int16",
-#         blocksize=frame_size
-#     )
-
-#     with stream:
-#         start_time = time.time()
-
-#         while True:
-#             frame, _ = stream.read(frame_size)
-
-#             frame_bytes = frame.tobytes()
-#             is_speech = vad.is_speech(frame_bytes, sample_rate)
-
-#             audio_frames.append(frame_bytes)
-
-#             if is_speech:
-#                 silence_counter = 0
-#             else:
-#                 silence_counter += 1
-
-#             # Stop if silence exceeds threshold
-#             if silence_counter > silence_limit:
-#                 print("🛑 Silence detected. Stopping recording.")
-#                 break
-
-#             # Safety stop (max duration)
-#             if time.time() - start_time > max_duration:
-#                 print("⏱ Max duration reached.")
-#                 break
-
-#     filename = f"answer_{uuid.uuid4().hex}.wav"
-
-#     with wave.open(filename, "wb") as wf:
-#         wf.setnchannels(1)
-#         wf.setsampwidth(2)
-#         wf.setframerate(sample_rate)
-#         wf.writeframes(b"".join(audio_frames))
-
-#     print("✅ Saved:", filename)
-
-#     return filename
-
-
-
-
 def record_answer(max_duration=120, silence_threshold=2):
 
     print("Waiting for candidate to start speaking...")
@@ -414,12 +355,12 @@ TECH_VECTORS = pinecone_index.fetch(
 
 async def start_interview():
 
-    # candidate_id = input("Enter candidate id: ")
+    candidate_id = input("Enter candidate id: ")
 
-    # candidate = get_candidate(candidate_id)
+candidate = get_candidate(candidate_id)
 
-    # candidate_name = candidate["name"]
-    # job_post = candidate["jobPost"]
+     candidate_name = candidate["name"]
+     job_post = candidate["jobPost"]
     job_post='Frontend Developer'
     general_questions = [
     {
@@ -436,22 +377,18 @@ async def start_interview():
     await speak(f"Welcome Hesaan Let's begin the interview.")
 
     # Non technical questions
- #   general_questions = get_random_questions()
+    general_questions = get_random_questions()
 
-    # for q in general_questions:
-    #     question_text = q["question"]
-    #     print("\nBOT:", question_text)
+     for q in general_questions:
+         question_text = q["question"]
+         print("\nBOT:", question_text)
 
-    #     await speak(question_text)
-    #     await wait_for_silence()
-        #input("Press ENTER to continue to the next question...")
-
-        # print("BOT:", q)
-        # await speak(q)
+         await speak(question_text)
+         await wait_for_silence()
 
     # Technical section
     await speak("Now we will begin the technical section.")
-   # technical_questions = get_technical_questions(job_post)
+    technical_questions = get_technical_questions(job_post)
     technical_questions = [
     {
         "text": "What is the difference between var, let, and const in JavaScript?",
