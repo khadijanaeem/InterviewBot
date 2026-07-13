@@ -84,31 +84,6 @@ async def speak(text):
     except Exception as e:
         print("[AUDIO ERROR] Failed to play audio:", e)
 
-# def wait_for_participant(max_wait=60):
-#     print("\n🕑 Waiting for participant to join...")
-
-#     start = time.time()
-#     speech_frames = 0
-
-#     while True:
-#         audio = sd.rec(frame_size, samplerate=sample_rate, channels=1, dtype='int16')
-#         sd.wait()
-
-#         is_speech = vad.is_speech(audio.tobytes(), sample_rate)
-
-#         if is_speech:
-#             speech_frames += 1
-#         else:
-#             speech_frames = 0
-
-#         # If we hear speech for 5 consecutive frames (~150ms)
-#         if speech_frames >= 5:
-#             print("🎉 Participant detected! Starting interview.\n")
-#             return True
-
-#         if time.time() - start > max_wait:
-#             print("⚠ No participant detected within time. Starting anyway.\n")
-#             return False
 
 def wait_until_silent(max_wait=9):
     print("🎤 Waiting for candidate...")
@@ -410,39 +385,20 @@ def detect_end_of_speech(max_silence_sec=0.8):
 
 async def start_interview():
     intro_question = "Welcome to the interview. What's your name? Please introduce yourself."
-    # print(f"[BOT] {intro_question}")
-    # await speak(intro_question)
-    # detect_speech(timeout=7)
-    # detect_end_of_speech(max_silence_sec=2)
-    # #wait_until_silent()
-    candidate_name = "hisaan"
-    # print(f"[BOT] Nice to meet you, {candidate_name}!")
-    # await speak(f"Nice to meet you, ")
-
-
-    # questions = [
-    #     "Can you tell me why are you interested in this role?",
-    # #   "What type of projects have you worked on recently?",
-    # #   "How do you handle pressure during tight deadlines?",
-    # #     "How do you work in a team?",
-    #     "What relevant experience do you have?",
-    #     "List 3 skills that make you a strong fit for this job.",
-    #     #"What is the most complex bug you fixed recently?",
-    #     "Thank you. This concludes our interview."
-    # ]   
-
+   
+    candidate_name = "ali"
     questions_asked =   [intro_question] + get_random_questions_per_category()
     print(questions_asked)
     # 3️⃣ Ask questions
     for q in questions_asked:
 
-        #await wait_for_candidate_signal() 
-        #wait_until_silent()
+        await wait_for_candidate_signal() 
+        wait_until_silent()
         print(f"[BOT] {q}")
         await speak(q)
         detect_speech(timeout=5)
         detect_end_of_speech(max_silence_sec=5)
-        #wait_until_silent()  
+        wait_until_silent()  
     local_audio_file = "{candidate_name}_interview.mp4"       
     recording_url = upload_recording_to_supabase(candidate_name, local_audio_file)
     # 4️⃣ Save to MongoDB
