@@ -40,8 +40,9 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 def save_interview_to_db(candidate_name, questions_asked):
     """
     Saves candidate's interview questions to MongoDB.
+    
     """
-    client = MongoClient("mongodb+srv://foryoupage20255_db_user:w8UNPbJNbGZIrN4R@cluster0.vuqorbi.mongodb.net/?appName=Cluster0")
+    client = MongoClient(MONGO_URI)
     db = client.empowhr
     col = db.interviews
 
