@@ -32,8 +32,6 @@ client = MongoClient(MONGO_URI)
 db = client["EmpowHR_db1"]
 jobapplications_collection=db["jobApplications"]
 
-MEETING_URL = "7453011380"
-INTERVIEW_BOT_SCRIPT = "bot5.py"
 
 def get_application_data(application_id):
     data = jobapplications_collection.find_one({
