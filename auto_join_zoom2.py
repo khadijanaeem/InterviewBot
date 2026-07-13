@@ -21,9 +21,6 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 from supabase import create_client
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-candidate_name = 'Noor Fatima'
-application_id = '30896dc0-822e-4fa0-8a2b-87521e5bf3b9'
-job_id = '69148a80cc059aa53701c0e1'
 
 print("Candidate:", candidate_name)
 print("Application ID:", application_id)
