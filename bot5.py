@@ -97,26 +97,6 @@ def next_difficulty(current_difficulty, score):
     else:
         return "Medium"
 
-# def get_technical_questions(job_post,difficulty):
-#     medium = list(questions_collection.find({
-#         "category": "technical",
-#         "jobPost": job_post,
-#         "difficulty": "Medium"
-#     }))
-
-#     easy = list(questions_collection.find({
-#         "category": "technical",
-#         "jobPost": job_post,
-#         "difficulty": "Easy"
-#     }))
-
-#     hard = list(questions_collection.find({
-#         "category": "technical",
-#         "jobPost": job_post,
-#         "difficulty": "Hard"
-#     }))
-
-#     return medium + easy + hard
 
 async def speak(text):
 
@@ -388,74 +368,6 @@ async def start_interview(application_id):
         print("Score:", score)
 
         current_difficulty = next_difficulty(current_difficulty, score)
-
-# async def start_interview(application_id):   
-#  #   job_post='Frontend Developer'
-#     general_questions = get_general_questions()
-
-#     await speak("Welcome. Let's begin the interview.")
-
-#     loop = asyncio.get_event_loop()
-    
-#     for q in general_questions:
-#         question_text = q["text"]
-#         #save_question(candidate["_id"], question_text) 
-#         print("\nBOT:", question_text)
-
-#         await speak(question_text)
-      
-#         answer_audio = record_answer()
-#         time.sleep(2)
-#         transcript_data = await loop.run_in_executor(
-#             None,
-#             transcriber.transcribe,
-#             answer_audio
-#         )
-
-#         transcript_text = transcript_data["full_text"]
-#         print("Candidate transcript:", transcript_text)
-        
-#     await speak("Now we will begin the technical section.")
-#     technical_questions = get_technical_questions(jobPost)
-
-#     TECH_VECTORS = load_technical_vectors(technical_questions)
-
-#     for q in technical_questions:
-
-#         question_text = q["text"]
-#         pinecone_id = q["pineconeId"]
-#         print("\nBOT:", question_text)
-#         await speak(question_text)
-#         answer_audio = record_answer()
-#         time.sleep(2)
-
-#         if answer_audio is None:
-#             print("⚠ No answer recorded")
-#             continue
-
-#         transcript_data = await loop.run_in_executor(
-#             None,
-#             transcriber.transcribe,
-#             answer_audio
-#         )
-
-#         transcript_text = transcript_data["full_text"]
-#         print("Candidate transcript:", transcript_text)
-#         await speak("Thank you. Evaluating your answer.")
-
-#         similarity = await loop.run_in_executor(
-#             None,
-#             evaluate_answer,
-#             transcript_text,
-#             pinecone_id,
-#             TECH_VECTORS
-#         )
-
-#         score = convert_score(similarity)
-#         print("Similarity:", similarity)
-#         print("Score:", score)
-   
-#     await speak("Thank you. This concludes the interview.")
 
 if __name__ == "__main__":
     asyncio.run(start_interview(application_id))
