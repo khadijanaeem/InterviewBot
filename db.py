@@ -3,13 +3,8 @@ import random
 from pymongo import MongoClient
 
 def get_random_questions_per_category():
-    client = MongoClient(
-        "mongodb+srv://admin:pN8rW0SAFem7d9nh@cluster0.vuqorbi.mongodb.net/?retryWrites=true&w=majority"
+    client = MongoClient(MONGO_URI
     )
-    # db = db.client("EmpowHR_db1")
-    # col= db.collection("interview_questions")
-  #  col = db.coll(interview_questions)
-        # After connecting to the database, add this:
     print("\n=== DATABASE DEBUG INFO ===")
     print(f"Total documents: {col.count_documents({})}")
 
