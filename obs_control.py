@@ -17,12 +17,6 @@ class AutoOBSRecorder:
         # Paths for OBS
         self.obs_paths = [
             "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe"
-           # "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs"
-            # "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe",
-            # "C:\\Program Files\\obs-studio\\bin\\32bit\\obs32.exe",
-            # "C:\\Program Files (x86)\\obs-studio\\bin\\64bit\\obs64.exe",
-            # "C:\\Program Files (x86)\\obs-studio\\bin\\32bit\\obs32.exe",
-            # os.path.expanduser("~\\AppData\\Local\\Programs\\obs-studio\\bin\\64bit\\obs64.exe"),
         ]
         
         # VSCode project folder
